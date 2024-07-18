@@ -1,0 +1,10 @@
+.DS_Store
+.config/*
+!.config/nvim
+.config/nvim/lazy*
+.config/zsh/*
+!.config/zsh
+!.config/starship.toml
+!.config/wezterm
+.config/zsh/.zcompdump
+.config/zsh/.zsh_history

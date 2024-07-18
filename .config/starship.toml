@@ -1,0 +1,37 @@
+# エディターの補完を設定スキーマに合わせて取得
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# シェルのプロンプトの間に空行を挿入する
+add_newline = true
+
+
+[character]
+error_symbol = "[❯](bold red)"
+success_symbol = "[❯](bold green)"
+
+# パッケージモジュールを無効化することでプロンプトを完全に非表示にする
+[package]
+disabled = true
+
+[directory]
+truncation_length = 100
+truncate_to_repo = false
+
+[battery]
+disabled = true
+
+[aws]
+format = 'on [$symbol($profile )(\($region\) )]($style)'
+style = "bold blue"
+
+[docker_context]
+format = "via [🐋 $context]($style) "
+style = "bold blue"
+
+[username]
+style_user = "white bold"
+style_root = "black bold"
+format = "[$user🌱]($style) "
+disabled = false
+show_always = true
+
