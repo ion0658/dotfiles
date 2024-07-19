@@ -1,12 +1,43 @@
+local ensure_installed = {
+    "clangd"
+}
+
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        opts = {
-            ensure_installed = {
+        opts = function(_, opts)
+            local ensure_installed = {
                 "c",
                 "cpp"
             }
-        }
+            for _, lang in pairs(ensure_installed) do
+                table.insert(opts.ensure_installed, lang)
+            end
+        end
+    },
+    {
+        "williamboman/mason-lspconfig.nvim",
+        opts = function(_, opts)
+            for _, lang in pairs(ensure_installed) do
+                table.insert(opts.ensure_installed, lang)
+            end
+        end,
+    },
+    {
+        "jay-babu/mason-null-ls.nvim",
+        opts = function(_, opts)
+            for _, lang in pairs(ensure_installed) do
+                table.insert(opts.ensure_installed, lang)
+            end
+        end,
+    },
+    {
+        "jay-babu/mason-nvim-dap.nvim",
+        opts = function(_, opts)
+            for _, lang in pairs(ensure_installed) do
+                table.insert(opts.ensure_installed, lang)
+            end
+        end,
     },
     {
         "p00f/clangd_extensions.nvim",
@@ -38,10 +69,4 @@ return {
             },
         },
     },
-    {
-        "nvim-cmp",
-        opts = function(_, opts)
-            table.insert(opts.sorting.comparators, 1, require("clangd_extensions.cmp_scores"))
-        end,
-    }
 }

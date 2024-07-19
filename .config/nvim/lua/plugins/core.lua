@@ -1,13 +1,11 @@
 return {
-    { "folke/lazy.nvim", version = false },
-    { "LazyVim/LazyVim", version = false },
     {
-        "camspiers/luarocks",
-        dependencies = {
-            "rcarriga/nvim-notify", -- Optional dependency
-        },
-        opts = {
-            rocks = { "fzy" } -- Specify LuaRocks packages to install
-        }
+        "nvim-tree/nvim-web-devicons",
+        optional = true
+    },
+    {
+        "vhyrro/luarocks.nvim",
+        priority = 1000, -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
+        config = true,
     }
 }
