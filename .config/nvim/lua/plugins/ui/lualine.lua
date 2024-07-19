@@ -52,6 +52,7 @@ return {
                                 end
                             end,
                         },
+                        { "progress" },
                         { "location" },
                     },
                     lualine_z = {
