@@ -1,0 +1,10 @@
+gui:
+  showIcons: true
+
+customCommands:
+  - key: "C"
+    context: "files"
+    command: "git commit -v -t ~/.config/lazygit/commit_template_with_prompt.txt"
+    description: "Commit changes using git editor"
+    subprocess: true
+
