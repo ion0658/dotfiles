@@ -6,6 +6,7 @@ return {
         cmd = "Mason",
         keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
         build = ":MasonUpdate",
+        config = true
     },
     {
         "williamboman/mason-lspconfig.nvim",
@@ -15,7 +16,6 @@ return {
             ensure_installed = {}
         },
         config = function(_, opts)
-            require("mason").setup()
             local p = require("mason-lspconfig")
             p.setup(opts)
             p.setup_handlers {
@@ -35,10 +35,7 @@ return {
         opts = {
             ensure_installed = {}
         },
-        config = function(_, opts)
-            require("mason").setup()
-            require("mason-null-ls").setup(opts)
-        end,
+        config = true
     },
     {
         "jay-babu/mason-nvim-dap.nvim",
@@ -50,9 +47,6 @@ return {
         opts = {
             ensure_installed = {}
         },
-        config = function(_, opts)
-            require("mason").setup()
-            require("mason-nvim-dap").setup(opts)
-        end,
+        config = true
     }
 }

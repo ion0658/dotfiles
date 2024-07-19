@@ -74,7 +74,6 @@ map("n", "<leader>ft", "<Cmd>ToggleTerm<CR>", { desc = "Terminal (Root Dir)" })
 map("n", "<c-/>", "<Cmd>ToggleTerm<CR>", { desc = "Terminal (Root Dir)" })
 map("n", "<c-_>", "<Cmd>ToggleTerm<CR>", { desc = "which_key_ignore" })
 -- Terminal Mappings
-map("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
 map("t", "<C-h>", "<cmd>wincmd h<cr>", { desc = "Go to Left Window" })
 map("t", "<C-j>", "<cmd>wincmd j<cr>", { desc = "Go to Lower Window" })
 map("t", "<C-k>", "<cmd>wincmd k<cr>", { desc = "Go to Upper Window" })
