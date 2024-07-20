@@ -7,7 +7,8 @@ if wezterm.config_builder then
 end
 
 -- カラースキームの設定
-config.color_scheme = "tokyonight"
+-- config.color_scheme = "tokyonight"
+config.color_scheme = 'iceberg-dark'
 config.font = wezterm.font("Cascadia Mono NF")
 config.font_size = 12.0
 
