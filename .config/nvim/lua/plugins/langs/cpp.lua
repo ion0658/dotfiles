@@ -47,7 +47,6 @@ return {
             'BufReadPost *.h', 'BufWritePost *.h', 'BufNewFile *.h',
             'BufReadPost *.hpp', 'BufWritePost *.hpp', 'BufNewFile *.hpp'
         },
-        priority = 9100,
         config = function() end,
         opts = {
             inlay_hints = {

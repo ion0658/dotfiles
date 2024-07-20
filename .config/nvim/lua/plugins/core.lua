@@ -6,7 +6,7 @@ return {
     },
     {
         "vhyrro/luarocks.nvim",
-        priority = 100, -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
+        priority = 9000, -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
         config = true,
     }
 }

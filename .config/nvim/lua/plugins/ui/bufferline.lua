@@ -3,7 +3,6 @@ return {
         'akinsho/bufferline.nvim',
         dependencies = 'nvim-tree/nvim-web-devicons',
         event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
-        priority = 9000,
         keys = {
             { "<leader>bp", "<Cmd>BufferLineTogglePin<CR>",            desc = "Toggle Pin" },
             { "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", desc = "Delete Non-Pinned Buffers" },
