@@ -1,7 +1,6 @@
 return {
     {
         "williamboman/mason.nvim",
-        dependencies = { "williamboman/mason-lspconfig.nvim" },
         optional = true,
         lazy = true,
         cmd = "Mason",
@@ -14,7 +13,7 @@ return {
         dependencies = { "neovim/nvim-lspconfig", "williamboman/mason.nvim" },
         event = { "VeryLazy" },
         opts = {
-            ensure_installed = {}
+            ensure_installed = {},
         },
         config = function(_, opts)
             local p = require("mason-lspconfig")

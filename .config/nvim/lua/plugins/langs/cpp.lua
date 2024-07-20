@@ -41,6 +41,12 @@ return {
     },
     {
         "p00f/clangd_extensions.nvim",
+        event = {
+            'BufReadPost *.c', 'BufWritePost *.c', 'BufNewFile *.c',
+            'BufReadPost *.cpp', 'BufWritePost *.cpp', 'BufNewFile *.cpp',
+            'BufReadPost *.h', 'BufWritePost *.h', 'BufNewFile *.h',
+            'BufReadPost *.hpp', 'BufWritePost *.hpp', 'BufNewFile *.hpp'
+        },
         lazy = true,
         config = function() end,
         opts = {
