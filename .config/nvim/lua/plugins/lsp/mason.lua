@@ -11,7 +11,8 @@ return {
     {
         "williamboman/mason-lspconfig.nvim",
         dependencies = { "neovim/nvim-lspconfig", "williamboman/mason.nvim" },
-        event = { "VeryLazy" },
+        event = { "VeryLazy", 'BufReadPre', 'BufWritePre', 'BufNewFile' },
+        priority = 100,
         opts = {
             ensure_installed = {},
         },
@@ -31,7 +32,8 @@ return {
             "williamboman/mason.nvim",
             "nvimtools/none-ls.nvim",
         },
-        event = { "VeryLazy" },
+        event = { "VeryLazy", 'BufReadPre', 'BufWritePre', 'BufNewFile' },
+        priority = 101,
         opts = {
             ensure_installed = {}
         },
@@ -43,7 +45,8 @@ return {
             "williamboman/mason.nvim",
             "mfussenegger/nvim-dap",
         },
-        event = { "VeryLazy" },
+        event = { "VeryLazy", 'BufReadPre', 'BufWritePre', 'BufNewFile' },
+        priority = 102,
         opts = {
             ensure_installed = {}
         },

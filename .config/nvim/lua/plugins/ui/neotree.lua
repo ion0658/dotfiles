@@ -8,6 +8,7 @@ return {
             "MunifTanjim/nui.nvim",
         },
         cmd = "Neotree",
+        events = { "VeryLazy" },
         keys = {
             {
                 "<leader>fe",
@@ -57,6 +58,7 @@ return {
         opts = {
             sources = { "filesystem", "buffers", "git_status" },
             open_files_do_not_replace_types = { "terminal", "Trouble", "trouble", "qf", "Outline" },
+            hijack_netrw_behavior = "open_current",
             filesystem = {
                 window = {
                     width = 30,

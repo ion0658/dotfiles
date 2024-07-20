@@ -1,7 +1,8 @@
 return {
     {
         "shellRaining/hlchunk.nvim",
-        event = { "BufReadPre", "BufNewFile" },
+        event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+        priority = 9000,
         config = function()
             require("hlchunk").setup({
                 chunk = {

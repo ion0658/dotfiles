@@ -6,11 +6,11 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         opts = function(_, opts)
-            local ensure_installed = {
+            local ensure_installed_1 = {
                 "c",
                 "cpp"
             }
-            for _, lang in pairs(ensure_installed) do
+            for _, lang in pairs(ensure_installed_1) do
                 table.insert(opts.ensure_installed, lang)
             end
         end
@@ -47,7 +47,7 @@ return {
             'BufReadPost *.h', 'BufWritePost *.h', 'BufNewFile *.h',
             'BufReadPost *.hpp', 'BufWritePost *.hpp', 'BufNewFile *.hpp'
         },
-        lazy = true,
+        priority = 9100,
         config = function() end,
         opts = {
             inlay_hints = {

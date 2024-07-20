@@ -17,6 +17,7 @@ return {
             {
                 "Saecki/crates.nvim",
                 event = { "BufReadPost Cargo.toml", "BufWritePost Cargo.toml", "BufNewFile Cargo.toml" },
+                priority = 9100,
                 opts = {
                     completion = {
                         cmp = { enabled = true },
@@ -32,5 +33,6 @@ return {
     {
         "mrcjkb/rustaceanvim",
         event = { 'BufReadPost *.rs', 'BufWritePost *.rs', 'BufNewFile *.rs' },
+        priority = 9100,
     },
 }
