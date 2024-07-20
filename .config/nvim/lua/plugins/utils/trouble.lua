@@ -1,7 +1,7 @@
 return {
     {
         "folke/trouble.nvim",
-        event = "BufRead",
+        event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
         opts = {
             use_diagnostic_signs = true
         },

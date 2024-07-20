@@ -16,7 +16,7 @@ return {
         dependencies = {
             {
                 "Saecki/crates.nvim",
-                event = { "BufRead Cargo.toml" },
+                event = { "BufReadPost Cargo.toml", "BufWritePost Cargo.toml", "BufNewFile Cargo.toml" },
                 opts = {
                     completion = {
                         cmp = { enabled = true },
