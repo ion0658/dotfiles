@@ -4,6 +4,7 @@ return {
         dependencies = {
             'nvim-telescope/telescope.nvim', -- Only needed if you want to use sesssion lens
         },
+        priority = 300, -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
         opts = {
             auto_session_suppress_dirs = { "~/workspace", "~/Downloads", "/", "~/AppData", "~/Documents" },
             auto_session_enable_last_session = false,
