@@ -1,7 +1,8 @@
 return {
     {
         "nvim-tree/nvim-web-devicons",
-        optional = true
+        optional = true,
+        lazy = true
     },
     {
         "vhyrro/luarocks.nvim",
