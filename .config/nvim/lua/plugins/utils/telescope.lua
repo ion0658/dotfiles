@@ -95,6 +95,11 @@ return {
                 "<leader>fp",
                 "<cmd>Telescope project<cr>",
                 desc = "Project",
+            },
+            {
+                "<leader>fS",
+                "<cmd>Telescope session-lens search_session<cr>",
+                desc = "Search Session"
             }
         },
     }
