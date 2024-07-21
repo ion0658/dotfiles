@@ -55,7 +55,7 @@ config.keys = {
     {
         -- close pane with cmd+w
         key = "w",
-        mods = "CTRL",
+        mods = "ALT|CTRL",
         action = wezterm.action.CloseCurrentPane({ confirm = true }),
     },
     {
