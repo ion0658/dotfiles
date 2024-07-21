@@ -3,7 +3,7 @@ local launch_menu = {}
 local config = {}
 
 if wezterm.config_builder then
-	config = wezterm.config_builder()
+    config = wezterm.config_builder()
 end
 
 -- カラースキームの設定
@@ -18,80 +18,101 @@ config.enable_scroll_bar = true
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
 
+-- start with window maximized
+wezterm.on('gui-startup', function(cmd)
+    local _tab, _pane, window = wezterm.mux.spawn_window(cmd or {})
+    window:gui_window():maximize()
+end)
+
 -- keybindings
 config.leader = { key = "q", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
-	{
-		mods = "LEADER",
-		key = "t",
-		action = wezterm.action.ShowLauncher,
-	},
-	{
-		key = "t",
-		mods = "SHIFT|CTRL",
-		action = wezterm.action.SpawnTab("CurrentPaneDomain"),
-	},
-	{
-		-- close pane with cmd+w
-		key = "w",
-		mods = "CTRL",
-		action = wezterm.action.CloseCurrentPane({ confirm = true }),
-	},
-	{
-		-- split pane with cmd+alt+,
-		key = ",",
-		mods = "ALT|CTRL",
-		action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }),
-	},
-	{
-		-- split pane with cmd+alt+.
-		key = ".",
-		mods = "ALT|CTRL",
-		action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }),
-	},
-	-- Alt Ctrl hjklでペインの移動
-	{
-		key = "h",
-		mods = "ALT|CTRL",
-		action = wezterm.action.ActivatePaneDirection("Left"),
-	},
-	{
-		key = "j",
-		mods = "ALT|CTRL",
-		action = wezterm.action.ActivatePaneDirection("Down"),
-	},
-	{
-		key = "k",
-		mods = "ALT|CTRL",
-		action = wezterm.action.ActivatePaneDirection("Up"),
-	},
-	{
-		key = "l",
-		mods = "ALT|CTRL",
-		action = wezterm.action.ActivatePaneDirection("Right"),
-	},
+    {
+        key = 'Enter',
+        mods = 'ALT',
+        action = wezterm.action.ToggleFullScreen,
+    },
+    {
+        key = 'C',
+        mods = 'CTRL',
+        action = wezterm.action.CopyTo 'Clipboard',
+    },
+    {
+        key = 'V',
+        mods = 'CTRL',
+        action = wezterm.action.PasteFrom 'Clipboard',
+    },
+    {
+        mods = "LEADER",
+        key = "t",
+        action = wezterm.action.ShowLauncher,
+    },
+    {
+        key = "t",
+        mods = "SHIFT|CTRL",
+        action = wezterm.action.SpawnTab("CurrentPaneDomain"),
+    },
+    {
+        -- close pane with cmd+w
+        key = "w",
+        mods = "CTRL",
+        action = wezterm.action.CloseCurrentPane({ confirm = true }),
+    },
+    {
+        -- split pane with cmd+alt+,
+        key = ",",
+        mods = "ALT|CTRL",
+        action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }),
+    },
+    {
+        -- split pane with cmd+alt+.
+        key = ".",
+        mods = "ALT|CTRL",
+        action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }),
+    },
+    -- Alt Ctrl hjklでペインの移動
+    {
+        key = "h",
+        mods = "ALT|CTRL",
+        action = wezterm.action.ActivatePaneDirection("Left"),
+    },
+    {
+        key = "j",
+        mods = "ALT|CTRL",
+        action = wezterm.action.ActivatePaneDirection("Down"),
+    },
+    {
+        key = "k",
+        mods = "ALT|CTRL",
+        action = wezterm.action.ActivatePaneDirection("Up"),
+    },
+    {
+        key = "l",
+        mods = "ALT|CTRL",
+        action = wezterm.action.ActivatePaneDirection("Right"),
+    },
 }
 
 -- for windows
 if wezterm.target_triple:find("msvc") then
-	config.wsl_domains = {
-		{
-			name = "WSL:ArchLinux",
-			distribution = "ArchLinux",
-			default_cwd = "~",
-		},
-	}
-	launch_menu = {
-		{
-			label = "PowerShell",
-			args = { "powershell.exe", "-NoLogo" },
-		},
-		{
-			label = "cmd",
-			args = { "cmd.exe" },
-		},
-	}
-	config.default_prog = { "pwsh.exe", "-NoLogo" }
+    config.wsl_domains = {
+        {
+            name = "WSL:ArchLinux",
+            distribution = "ArchLinux",
+            default_cwd = "~",
+        },
+    }
+    launch_menu = {
+        {
+            label = "PowerShell",
+            args = { "powershell.exe", "-NoLogo" },
+        },
+        {
+            label = "cmd",
+            args = { "cmd.exe" },
+        },
+    }
+    config.default_prog = { "pwsh.exe", "-NoLogo" }
 end
 
 config.launch_menu = launch_menu

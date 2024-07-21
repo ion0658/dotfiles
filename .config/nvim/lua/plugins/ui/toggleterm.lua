@@ -2,9 +2,11 @@ return {
     {
         'akinsho/toggleterm.nvim',
         cmd = 'ToggleTerm',
-        opts = function()
-            return { start_in_insert = true }
-        end,
+        opts = {
+            start_in_insert = true,
+            direction = 'float',
+        }
+        ,
         keys = {
             { "<leader>tt", "<CMD>ToggleTerm<CR>", desc = "ToggleTerm" }
         }
