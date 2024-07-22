@@ -4,6 +4,7 @@ local ensure_installed = {
     "cssls",
     "biome",
     "volar",
+    "tsserver",
 }
 
 return {
