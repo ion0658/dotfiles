@@ -74,7 +74,6 @@ return {
                         ".git",
                         ".DS_Store",
                         "thumbs.db",
-                        "package-lock.json",
                     },
                     never_show = {},
                 },

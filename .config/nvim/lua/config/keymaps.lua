@@ -106,7 +106,7 @@ map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 
 
 -- quit
-map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
+map("n", "<leader>qq", "<cmd>quitall<cr>", { desc = "Quit All" })
 
 -- Toggle Terminal
 map("n", "<leader>ft", "<Cmd>ToggleTerm<CR>", { desc = "Terminal (Root Dir)" })
