@@ -3,6 +3,10 @@ local function close_neo_tree()
     vim.notify('closed all')
 end
 
+local function delete_all_buffer()
+    vim.cmd('silent! %bd!') -- delete all buffers
+end
+
 local function open_neo_tree()
     vim.notify('opening neotree')
     require 'neo-tree.sources.manager'.show('filesystem')
@@ -33,16 +37,20 @@ return {
             pre_save_cmds = {
                 close_neo_tree,
             },
+            post_save_cmds = {
+                delete_all_buffer,
+            },
             post_restore_cmds = {
                 open_neo_tree,
             },
             cwd_change_handling = {
                 restore_upcoming_session = true, -- Disabled by default, set to true to enable
                 pre_cwd_changed_hook = function()
-                    vim.cmd('bd!')
+                    delete_all_buffer()
                 end,                               -- already the default, no need to specify like this, only here as an example
                 post_cwd_changed_hook = function() -- example refreshing the lualine status line _after_ the cwd changes
                     require("lualine").refresh()   -- refresh lualine so the new session name is displayed in the status bar
+                    vim.cmd('silent! bd!')         -- delete
                 end,
             },
         },
