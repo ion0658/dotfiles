@@ -15,15 +15,18 @@ local function open_neo_tree()
     require 'neo-tree.sources.manager'.show('filesystem')
 end
 
-local function on_cwd_changed()
+local function on_change_cwd()
     local st, mgr = pcall(require, "neo-tree.sources.manager")
     if not st then
+        vim.notify("NeoTree is not installed", vim.log.levels.ERROR)
         return
     end
     local state = mgr.get_state "filesystem"
     if not require("neo-tree.ui.renderer").window_exists(state) then
+        vim.notify("NeoTree is not open", vim.log.levels.ERROR)
         return
     end
+    vim.notify("change cwd to " .. vim.uv.cwd())
     require("neo-tree.command").execute { dir = vim.uv.cwd() }
 end
 
@@ -71,15 +74,7 @@ return {
             },
             post_restore_cmds = {
                 open_neo_tree,
-            },
-            cwd_change_handling = {
-                restore_upcoming_session = true,   -- Disabled by default, set to true to enable
-                pre_cwd_changed_hook = function()
-                end,                               -- already the default, no need to specify like this, only here as an example
-                post_cwd_changed_hook = function() -- example refreshing the lualine status line _after_ the cwd changes
-                    on_cwd_changed()
-                    require("lualine").refresh()   -- refresh lualine so the new session name is displayed in the status bar
-                end,
+                on_change_cwd,
             },
         },
         config = function(_, opts)
