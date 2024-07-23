@@ -5,6 +5,7 @@ local ensure_installed = {
     "biome",
     "volar",
     "tsserver",
+    "tailwindcss",
 }
 
 return {
