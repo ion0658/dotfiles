@@ -5,7 +5,7 @@ return {
             "nvim-tree/nvim-web-devicons",
             "lewis6991/gitsigns.nvim",
         },
-        event = 'VeryLazy',
+        event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
         opts = {
             render = function(props)
                 local devicons = require 'nvim-web-devicons'
