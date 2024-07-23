@@ -54,10 +54,11 @@ return {
             "nvim-neo-tree/neo-tree.nvim",
             'nvim-telescope/telescope.nvim', -- Only needed if you want to use sesssion lens
         },
-        priority = 100,                      -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
+        -- priority = 100,   -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
+        event = { "VimEnter" },
         opts = {
             auto_session_suppress_dirs = { "~/", "~/workspace", "~/Downloads", "/", "~/AppData", "~/Documents" },
-            auto_session_enable_last_session = true,
+            auto_session_enable_last_session = false,
             auto_restore_enabled = true,
             auto_save_enabled = true,
             auto_restore_lazy_delay_enabled = true,
