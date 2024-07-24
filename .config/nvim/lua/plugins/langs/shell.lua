@@ -1,6 +1,10 @@
 local ensure_installed = {
     "bashls",
-    "lua_ls"
+    "lua_ls",
+    "autotools_ls",
+    "cmake",
+    "vimls",
+    "sqls",
 }
 
 return {
@@ -18,6 +22,7 @@ return {
                 "markdown",
                 "markdown_inline",
                 "regex",
+                "sql",
                 "vim",
                 "vimdoc",
             }
