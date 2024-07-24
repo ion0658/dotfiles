@@ -105,7 +105,7 @@ if wezterm.target_triple:find("msvc") then
     launch_menu = {
         {
             label = "PowerShell",
-            args = { "powershell.exe", "-NoLogo" },
+            args = { "pwsh.exe", "-NoLogo" },
         },
         {
             label = "cmd",
