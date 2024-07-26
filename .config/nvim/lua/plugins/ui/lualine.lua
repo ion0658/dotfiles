@@ -71,7 +71,6 @@ return {
                                 modified = { fg = colors.orange },
                                 removed = { fg = colors.red },
                             },
-                            cond = conditions.hide_in_width,
                         },
                         { "progress" },
                         { "location" },
