@@ -1,14 +1,10 @@
 return {
     {
         "nvim-tree/nvim-web-devicons",
-        optional = true,
-        lazy = true
     },
     {
-        "lewis6991/gitsigns.nvim",
-        optional = true,
-        lazy = true,
-        config = true
+        'echasnovski/mini.icons',
+        version = false,
     },
     {
         "vhyrro/luarocks.nvim",

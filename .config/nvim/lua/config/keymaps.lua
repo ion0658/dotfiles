@@ -49,31 +49,31 @@ local function delete_current_bufer()
     end
 end
 -- buffers
-map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
-map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
-map("n", "[b", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
-map("n", "]b", "<cmd>bnext<cr>", { desc = "Next Buffer" })
-map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
-map("n", "<leader>`", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
-map("n", "<leader>bd", delete_current_bufer, { desc = "Delete Buffer" })
-map("n", "<leader>bD", "<cmd>:bd<cr>", { desc = "Delete Buffer and Window" })
+map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer", remap = false })
+map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next Buffer", remap = false })
+map("n", "[b", "<cmd>bprevious<cr>", { desc = "Prev Buffer", remap = false })
+map("n", "]b", "<cmd>bnext<cr>", { desc = "Next Buffer", remap = false })
+map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer", remap = false })
+map("n", "<leader>`", "<cmd>e #<cr>", { desc = "Switch to Other Buffer", remap = false })
+map("n", "<leader>bd", delete_current_bufer, { desc = "Delete Buffer", remap = false })
+map("n", "<leader>bD", "<cmd>:bd<cr>", { desc = "Delete Buffer and Window", remap = false })
 
 -- Clear search with <esc>
-map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
+map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch", remap = false })
 
 -- save file
-map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
+map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File", remap = false })
 
 -- better indenting
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
 -- commenting
-map("n", "gco", "o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Comment Below" })
-map("n", "gcO", "O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Comment Above" })
+map("n", "gco", "o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Comment Below", remap = false })
+map("n", "gcO", "O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Comment Above", remap = false })
 
 -- lazy
-map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
+map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy", remap = false })
 
 -- new file
 map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
