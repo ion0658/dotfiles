@@ -10,9 +10,9 @@ return {
         },
         opts = {
             sources = {
-                { name = "nvim_lsp", group_index = 1 },
-                { name = "path",     group_index = 1 },
-                { name = "buffer",   group_index = 2 },
+                { name = "nvim_lsp", group_index = 1,  priority = 100 },
+                { name = "path",     group_index = 1,  priority = 80 },
+                { name = "buffer",   group_index = 2,  priority = 90 },
             },
         },
         config = function(_, opts)

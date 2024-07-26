@@ -24,7 +24,7 @@ return {
             },
         },
         opts = function(_, otps)
-            table.insert(otps.sources, { name = "copilot", group_index = 2 })
+            table.insert(otps.sources, { name = "copilot", group_index = 2, priority = 50 })
         end
     },
     {
