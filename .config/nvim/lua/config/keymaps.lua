@@ -130,6 +130,12 @@ map("n", "<c-w>d", "<C-W>c", { desc = "Delete Window", remap = true })
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("UserLspConfig", {}),
     callback = function(ev)
+        local client = vim.lsp.get_client_by_id(ev.data.client_id)
+        vim.notify("LSP Attached", "info", { title = "LSP" })
+        if client.server_capabilities.inlayHintProvider then
+            vim.notify("Inlay Hints Enabled", "info", { title = "LSP" })
+            vim.lsp.inlay_hint.enable(true)
+        end
         -- Enable completion triggered by <c-x><c-o>
         vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
         local function lsp(desc)
@@ -138,6 +144,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
             end
             return { desc = desc, buffer = ev.buf }
         end
+
+        vim.notify("LSP Mappings", "info", { title = "Keymaps" })
         -- { "gd",         "<cmd>lua vim.lsp.buf.definition()<cr>", desc = "Goto Definition", has = "definition" },
         map("n", "gd", vim.lsp.buf.definition, lsp("Goto Definition"))
         -- { "gr",         vim.lsp.buf.references,      desc = "References",            nowait = true },
