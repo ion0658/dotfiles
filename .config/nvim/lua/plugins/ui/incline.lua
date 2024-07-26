@@ -60,7 +60,6 @@ return {
             end,
         },
         config = function(_, opts)
-            vim.o.laststatus = 3
             require('incline').setup(opts)
         end,
     },
