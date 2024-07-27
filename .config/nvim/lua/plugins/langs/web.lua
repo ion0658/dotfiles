@@ -2,7 +2,7 @@ local ensure_installed = {
     -- web
     "html",
     "cssls",
-    "biome",
+    -- "biome",
     "volar",
     "tsserver",
     "tailwindcss",

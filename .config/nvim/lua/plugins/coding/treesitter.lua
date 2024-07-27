@@ -14,6 +14,7 @@ return {
             autotag = { enable = true },
             use_languagetree = true,
             ensure_installed = {},
+            auto_install = true,
             textobjects = {
                 move = {
                     enable = true,
