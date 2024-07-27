@@ -134,7 +134,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.notify("LSP Attached", "info", { title = "LSP" })
         if client.server_capabilities.inlayHintProvider then
             vim.notify("Inlay Hints Enabled", "info", { title = "LSP" })
-            vim.lsp.inlay_hint.enable(true)
+            vim.lsp.inlay_hint.enable(true, { bufnr = ev.buf })
         end
         -- Enable completion triggered by <c-x><c-o>
         vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
