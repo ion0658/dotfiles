@@ -20,7 +20,11 @@ return {
             p.setup(opts)
             p.setup_handlers {
                 function(server_name)
-                    require("lspconfig")[server_name].setup {}
+                    local server_config = {}
+                    if server_name == "volar" then
+                        server_config.filetypes = { 'vue', 'typescript', 'javascript' }
+                    end
+                    require("lspconfig")[server_name].setup(server_config)
                 end
             }
         end,
