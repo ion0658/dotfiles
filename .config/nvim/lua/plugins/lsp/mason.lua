@@ -11,11 +11,12 @@ return {
     {
         "williamboman/mason-lspconfig.nvim",
         dependencies = { "neovim/nvim-lspconfig", "williamboman/mason.nvim" },
-        event = { "VeryLazy", 'BufReadPre', 'BufWritePre', 'BufNewFile' },
-        opts = {
+        event        = { "VeryLazy", 'BufReadPre', 'BufWritePre', 'BufNewFile' },
+        opts_extend  = { "ensure_installed" },
+        opts         = {
             ensure_installed = {},
         },
-        config = function(_, opts)
+        config       = function(_, opts)
             local p = require("mason-lspconfig")
             p.setup(opts)
             p.setup_handlers {
@@ -61,11 +62,12 @@ return {
             "williamboman/mason.nvim",
             "nvimtools/none-ls.nvim",
         },
-        event = { "VeryLazy", 'BufReadPre', 'BufWritePre', 'BufNewFile' },
-        opts = {
+        event        = { "VeryLazy", 'BufReadPre', 'BufWritePre', 'BufNewFile' },
+        opts_extend  = { "ensure_installed" },
+        opts         = {
             ensure_installed = {}
         },
-        config = true
+        config       = true
     },
     {
         "jay-babu/mason-nvim-dap.nvim",
@@ -73,10 +75,11 @@ return {
             "williamboman/mason.nvim",
             "mfussenegger/nvim-dap",
         },
-        event = { "VeryLazy", 'BufReadPre', 'BufWritePre', 'BufNewFile' },
-        opts = {
+        event        = { "VeryLazy", 'BufReadPre', 'BufWritePre', 'BufNewFile' },
+        opts_extend  = { "ensure_installed" },
+        opts         = {
             ensure_installed = {}
         },
-        config = true
+        config       = true
     }
 }

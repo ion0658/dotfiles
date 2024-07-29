@@ -5,39 +5,30 @@ local ensure_installed = {
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        opts = function(_, opts)
-            local ensure_installed_1 = {
+        opts = {
+            ensure_installed = {
                 "c",
                 "cpp"
             }
-            for _, lang in pairs(ensure_installed_1) do
-                table.insert(opts.ensure_installed, lang)
-            end
-        end
+        }
     },
     {
         "williamboman/mason-lspconfig.nvim",
-        opts = function(_, opts)
-            for _, lang in pairs(ensure_installed) do
-                table.insert(opts.ensure_installed, lang)
-            end
-        end,
+        opts = {
+            ensure_installed = ensure_installed
+        },
     },
     {
         "jay-babu/mason-null-ls.nvim",
-        opts = function(_, opts)
-            for _, lang in pairs(ensure_installed) do
-                table.insert(opts.ensure_installed, lang)
-            end
-        end,
+        opts = {
+            ensure_installed = ensure_installed
+        },
     },
     {
         "jay-babu/mason-nvim-dap.nvim",
-        opts = function(_, opts)
-            for _, lang in pairs(ensure_installed) do
-                table.insert(opts.ensure_installed, lang)
-            end
-        end,
+        opts = {
+            ensure_installed = ensure_installed
+        },
     },
     {
         "p00f/clangd_extensions.nvim",

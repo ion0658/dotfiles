@@ -8,6 +8,7 @@ return {
             { "nvim-treesitter/nvim-treesitter-textobjects" },
         },
         cmd          = { "TSUpdateSync", "TSUpdate", "TSInstall" },
+        opts_extend  = { "ensure_installed" },
         opts         = {
             highlight = { enable = true },
             indent = { enable = true },

@@ -1,15 +1,12 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        opts = function(_, opts)
-            local ensure_installed = {
+        opts = {
+            ensure_installed = {
                 "rust",
-                "ron"
+                "ron",
             }
-            for _, lang in pairs(ensure_installed) do
-                table.insert(opts.ensure_installed, lang)
-            end
-        end
+        },
     },
     {
         "hrsh7th/nvim-cmp",
