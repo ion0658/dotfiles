@@ -28,19 +28,19 @@ local function on_change_cwd()
     end
     vim.notify("change cwd to " .. vim.uv.cwd())
     require("neo-tree.command").execute { dir = vim.uv.cwd() }
+    require("lualine").refresh()
 end
 
 local function clear_hidden_buffers()
-    local page = vim.api.nvim_get_current_tabpage()
-    local windows = vim.api.nvim_tabpage_list_wins(page)
-    local win_bufs = {}
-    for _, w in ipairs(windows) do
-        local buf = vim.api.nvim_win_get_buf(w)
-        win_bufs[buf] = true
+    local buffers = vim.fn.tabpagebuflist()
+    local dont_close_buffers = {}
+    for _, b in ipairs(buffers) do
+        dont_close_buffers[b] = true
+        vim.notify('buffer ' .. b)
     end
     local all_bufs = vim.api.nvim_list_bufs()
     for _, buf in ipairs(all_bufs) do
-        if not win_bufs[buf] then
+        if not dont_close_buffers[buf] then
             vim.api.nvim_buf_delete(buf, { force = true })
         end
     end
@@ -70,12 +70,21 @@ return {
             bypass_session_save_file_types = { "neo-tree" },
             pre_save_cmds = {
                 close_neo_tree,
-                clear_hidden_buffers,
             },
             post_restore_cmds = {
                 open_neo_tree,
                 on_change_cwd,
             },
+            cwd_change_handling = {
+                pre_cwd_changed_hool = function()
+                    close_neo_tree()
+                    clear_hidden_buffers()
+                end,
+                post_cwd_changed_hook = function()
+                    on_change_cwd()
+                    clear_hidden_buffers()
+                end
+            }
         },
         config = function(_, opts)
             vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'

@@ -15,6 +15,7 @@ vim.opt.autoindent = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.wrap = false
 vim.opt.termguicolors = true
+vim.opt.laststatus = 2
 
 -- disable perl provider
 vim.g.loaded_perl_provider = 0
