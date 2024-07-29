@@ -7,6 +7,7 @@ return {
             'nvim-telescope/telescope-ui-select.nvim',
             "nvim-telescope/telescope-project.nvim",
             "nvim-telescope/telescope-file-browser.nvim",
+            'rmagatti/auto-session',
         },
         event = { "VeryLazy" },
         cmd = "Telescope",

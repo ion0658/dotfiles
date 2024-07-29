@@ -40,4 +40,9 @@ return {
             ensure_installed = ensure_installed
         },
     },
+    {
+        "norcalli/nvim-colorizer.lua",
+        event = { "BufReadPre", "BufNewFile", "BufWritePre" },
+        config = true
+    },
 }

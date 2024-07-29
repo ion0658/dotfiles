@@ -6,6 +6,7 @@ return {
         event        = { "VeryLazy" },
         dependencies = {
             { "nvim-treesitter/nvim-treesitter-textobjects" },
+            { "nvim-treesitter/nvim-treesitter-context" },
         },
         cmd          = { "TSUpdateSync", "TSUpdate", "TSInstall" },
         opts_extend  = { "ensure_installed" },
@@ -49,6 +50,12 @@ return {
     },
     {
         "nvim-treesitter/nvim-treesitter-textobjects",
+        version = false,
+        optional = true,
+        lazy = true
+    },
+    {
+        "nvim-treesitter/nvim-treesitter-context",
         version = false,
         optional = true,
         lazy = true

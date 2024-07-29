@@ -52,7 +52,6 @@ return {
         enabled = true,
         dependencies = {
             "nvim-neo-tree/neo-tree.nvim",
-            'nvim-telescope/telescope.nvim', -- Only needed if you want to use sesssion lens
         },
         -- priority = 100,   -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
         event = { "VimEnter" },
