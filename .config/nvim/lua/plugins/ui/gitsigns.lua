@@ -1,8 +1,7 @@
 return {
     {
         "lewis6991/gitsigns.nvim",
-        optional = true,
-        lazy = true,
+        event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
         config = true
     }
 }
