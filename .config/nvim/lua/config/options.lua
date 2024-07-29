@@ -14,6 +14,7 @@ vim.opt.wrapscan = true
 vim.opt.autoindent = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.wrap = false
+vim.opt.termguicolors = true
 
 -- disable perl provider
 vim.g.loaded_perl_provider = 0
@@ -22,6 +23,19 @@ vim.g.loaded_node_provider = 0
 --if vim.fn.executable("volta") then
 --	vim.g.node_host_prog = vim.fn.trim(vim.fn.system("volta which neovim-node-host"))
 --end
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+    border = "rounded",
+})
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.hover, {
+    border = "rounded",
+})
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+    virtual_text = false,
+})
+vim.diagnostic.config {
+    float = { border = "rounded" },
+}
 
 -- Cursor Position Restore on File Open
 vim.api.nvim_create_autocmd({ "BufReadPost" }, {
