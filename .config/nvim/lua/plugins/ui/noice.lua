@@ -6,6 +6,13 @@ return {
             'rcarriga/nvim-notify'
         },
         event = "VeryLazy",
+        opts = {
+            lsp = {
+                signature = {
+                    enabled = false,
+                },
+            },
+        },
         config = true,
         keys = {
             { "<leader>sn",  "",                                                                            desc = "+noice" },

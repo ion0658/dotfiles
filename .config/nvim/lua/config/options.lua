@@ -13,6 +13,7 @@ vim.opt.showmatch = true
 vim.opt.wrapscan = true
 vim.opt.autoindent = true
 vim.opt.clipboard = "unnamedplus"
+vim.opt.wrap = false
 
 -- disable perl provider
 vim.g.loaded_perl_provider = 0
