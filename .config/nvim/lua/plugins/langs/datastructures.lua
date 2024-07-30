@@ -1,4 +1,6 @@
 local ensure_installed = {
+    -- json
+    "jsonls",
     -- docker
     "dockerls",
     "docker_compose_language_service",
