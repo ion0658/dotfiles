@@ -46,12 +46,23 @@ local function clear_hidden_buffers()
     end
 end
 
+local function disable_incline()
+    local p = require('incline')
+    p.disable()
+end
+local function enable_incline()
+    local p = require('incline')
+    p.enable()
+    p.refresh()
+end
+
 return {
     {
         'rmagatti/auto-session',
         enabled = true,
         dependencies = {
             "nvim-neo-tree/neo-tree.nvim",
+            "b0o/incline.nvim",
         },
         -- priority = 100,   -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
         event = { "VimEnter" },
@@ -78,11 +89,13 @@ return {
             cwd_change_handling = {
                 pre_cwd_changed_hool = function()
                     close_neo_tree()
+                    disable_incline()
                     clear_hidden_buffers()
                 end,
                 post_cwd_changed_hook = function()
                     on_change_cwd()
                     clear_hidden_buffers()
+                    enable_incline()
                 end
             }
         },
