@@ -14,13 +14,6 @@ return {
         opts = {
             defaults = {
                 initial_mode = 'insert',
-                layout_config = {
-                    vertical = {
-                        width = 0.5,
-                        mirror = true,
-                        prompt_position = 'top'
-                    }
-                },
                 file_ignore_patterns = {
                     "^node_modules/",
                     "^.git/",

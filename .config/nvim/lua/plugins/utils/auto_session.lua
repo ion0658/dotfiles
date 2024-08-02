@@ -62,9 +62,9 @@ return {
         enabled = true,
         dependencies = {
             "nvim-neo-tree/neo-tree.nvim",
+            "nvim-telescope/telescope.nvim",
             "b0o/incline.nvim",
         },
-        -- priority = 100,   -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
         event = { "VimEnter" },
         opts = {
             auto_session_suppress_dirs = { "~/", "~/workspace", "~/Downloads", "/", "~/AppData", "~/Documents" },
@@ -81,6 +81,7 @@ return {
             bypass_session_save_file_types = { "neo-tree" },
             pre_save_cmds = {
                 close_neo_tree,
+                disable_incline
             },
             post_restore_cmds = {
                 open_neo_tree,
