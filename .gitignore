@@ -4,9 +4,8 @@
 .config/nvim/lazy*
 .config/zsh/*
 !.config/zsh
+!.config/zsh/.zshrc
 !.config/starship.toml
 !.config/wezterm
-.config/zsh/.zcompdump
-.config/zsh/.zsh_history
 !.config/lazygit
 
