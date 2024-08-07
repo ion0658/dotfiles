@@ -9,7 +9,10 @@ end
 -- カラースキームの設定
 -- config.color_scheme = "tokyonight"
 config.color_scheme = 'iceberg-dark'
-config.font = wezterm.font("Cascadia Mono NF")
+--config.font = wezterm.font("Cascadia Mono NF")
+config.font = wezterm.font_with_fallback({
+    "Cascadia Mono NF",
+})
 config.font_size = 12.0
 
 -- ui settings
