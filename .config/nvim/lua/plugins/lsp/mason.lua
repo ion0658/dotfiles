@@ -49,6 +49,7 @@ return {
                                     },
                                 },
                             },
+                            filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" }
                         }
                     end
                     require("lspconfig")[server_name].setup(server_config)
