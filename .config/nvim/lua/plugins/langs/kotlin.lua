@@ -15,7 +15,9 @@ return {
     {
         "williamboman/mason-lspconfig.nvim",
         opts = {
-            ensure_installed = ensure_installed
+            ensure_installed = {
+                "kotlin-language-server"
+            }
         },
     },
     {
