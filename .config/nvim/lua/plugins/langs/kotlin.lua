@@ -1,6 +1,7 @@
 local ensure_installed = {
     -- kotlin
-    "kotlin"
+    "kotlin",
+    "kotlin-language-server"
 }
 
 return {
@@ -15,9 +16,7 @@ return {
     {
         "williamboman/mason-lspconfig.nvim",
         opts = {
-            ensure_installed = {
-                "kotlin-language-server"
-            }
+            ensure_installed = ensure_installed
         },
     },
     {
