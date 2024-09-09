@@ -1,6 +1,8 @@
 return {
     {
         "folke/which-key.nvim",
+        version = false,
+        lazy = true,
         event = "VeryLazy",
         opts = {
             spec = {

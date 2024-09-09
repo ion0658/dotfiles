@@ -1,7 +1,13 @@
 return {
-    { "MunifTanjim/nui.nvim", lazy = true },
+    {
+        "MunifTanjim/nui.nvim",
+        version = false,
+        lazy = true,
+    },
     {
         "nvim-neo-tree/neo-tree.nvim",
+        version = false,
+        lazy = true,
         branch = "v3.x",
         cmd = "Neotree",
         events = { "VeryLazy" },

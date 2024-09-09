@@ -4,7 +4,7 @@ local ensure_installed = {
     "cssls",
     "biome",
     "volar",
-    "tsserver",
+    "ts_ls",
     "tailwindcss",
 }
 
@@ -42,7 +42,8 @@ return {
     },
     {
         "norcalli/nvim-colorizer.lua",
+        version = false,
+        lazy = true,
         event = { "BufReadPre", "BufNewFile", "BufWritePre" },
-        config = true
     },
 }

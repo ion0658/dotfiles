@@ -1,6 +1,7 @@
 return {
     {
         'neovim/nvim-lspconfig',
+        version = false,
         lazy = true,
         keys = {
             { "<leader>cl", "<cmd>LspInfo<cr>", desc = "Lsp Info" },
@@ -8,6 +9,8 @@ return {
     },
     {
         "ray-x/lsp_signature.nvim",
+        version = false,
+        lazy = true,
         event = { "BufReadPre", "BufNewFile", "BufWritePre" },
         opts = {},
         config = function(_, opts)

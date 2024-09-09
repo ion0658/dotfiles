@@ -1,6 +1,8 @@
 return {
     {
         'Wansmer/treesj',
+        version = false,
+        lazy = true,
         keys = {
             { '<leader>tjm', '<cmd>TSJToggle<cr>', desc = 'Toggle Treesj' },
             { '<leader>tjj', '<cmd>TSJJoin<cr>',   desc = 'Join Treesj' },

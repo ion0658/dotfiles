@@ -1,6 +1,8 @@
 return {
     {
         'akinsho/bufferline.nvim',
+        version = false,
+        lazy = true,
         event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
         keys = {
             { "<leader>bp", "<Cmd>BufferLineTogglePin<CR>",            desc = "Toggle Pin" },

@@ -1,6 +1,8 @@
 return {
     {
         'akinsho/toggleterm.nvim',
+        version = false,
+        lazy = true,
         cmd = 'ToggleTerm',
         opts = {
             start_in_insert = true,

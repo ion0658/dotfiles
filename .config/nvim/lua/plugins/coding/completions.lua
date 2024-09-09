@@ -1,22 +1,28 @@
 return {
-    { "onsails/lspkind.nvim", lazy = true },
-    { "hrsh7th/cmp-nvim-lsp", lazy = true },
-
+    {
+        "onsails/lspkind.nvim",
+        version = false,
+        lazy = true,
+    },
     {
         "hrsh7th/nvim-cmp",
         event = "InsertEnter",
+        version = false,
+        lazy = true,
         dependencies = {
-            { "hrsh7th/cmp-nvim-lsp", lazy = true },
-            { "hrsh7th/cmp-buffer",   lazy = true },
-            { "hrsh7th/cmp-path",     lazy = true },
+            { "hrsh7th/cmp-nvim-lsp",   lazy = true },
+            { "hrsh7th/cmp-buffer",     lazy = true },
+            { "hrsh7th/cmp-path",       lazy = true },
+            { "zbirenbaum/copilot-cmp", lazy = true, },
         },
+        opts_extend = { "sources" },
         opts = {
             sources = {
                 { name = "nvim_lsp", group_index = 1, priority = 100 },
                 { name = "path",     group_index = 2, priority = 80 },
                 { name = "buffer",   group_index = 1, priority = 90 },
+                { name = "copilot",  group_index = 2, priority = 50 }
             },
-            extends = { 'cmp-nvim-lsp' }
         },
         config = function(_, opts)
             local cmp = require("cmp")

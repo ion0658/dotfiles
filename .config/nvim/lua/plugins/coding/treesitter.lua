@@ -2,6 +2,7 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         version     = false,
+        lazy        = true,
         build       = ":TSUpdate",
         event       = { "VeryLazy" },
         cmd         = { "TSUpdateSync", "TSUpdate", "TSInstall" },
@@ -47,11 +48,14 @@ return {
     {
         "nvim-treesitter/nvim-treesitter-textobjects",
         version = false,
-        lazy = true
+        lazy = true,
+        event = { "VeryLazy" },
+
     },
     {
         "nvim-treesitter/nvim-treesitter-context",
         version = false,
-        lazy = true
+        lazy    = true,
+        event   = { "VeryLazy" },
     }
 }

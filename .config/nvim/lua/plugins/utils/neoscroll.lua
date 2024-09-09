@@ -1,6 +1,8 @@
 return {
     {
         "karb94/neoscroll.nvim",
+        version = false,
+        lazy = true,
         event = "VeryLazy",
         opts = {
             mappings = {

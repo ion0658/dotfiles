@@ -1,6 +1,8 @@
 return {
     {
         "nvim-telescope/telescope.nvim",
+        version = false,
+        lazy = true,
         cmd = "Telescope",
         opts = {
             defaults = {
@@ -82,7 +84,19 @@ return {
             require("telescope").setup(opts)
         end
     },
-    { "nvim-telescope/telescope-project.nvim",      lazy = true },
-    { 'nvim-telescope/telescope-ui-select.nvim',    lazy = true },
-    { "nvim-telescope/telescope-file-browser.nvim", lazy = true },
+    {
+        "nvim-telescope/telescope-project.nvim",
+        version = false,
+        lazy = true
+    },
+    {
+        'nvim-telescope/telescope-ui-select.nvim',
+        version = false,
+        lazy = true
+    },
+    {
+        "nvim-telescope/telescope-file-browser.nvim",
+        version = false,
+        lazy = true
+    },
 }

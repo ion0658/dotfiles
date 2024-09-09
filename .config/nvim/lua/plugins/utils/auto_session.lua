@@ -59,7 +59,8 @@ end
 return {
     {
         'rmagatti/auto-session',
-        enabled = true,
+        version = false,
+        lazy = true,
         event = { "VimEnter" },
         opts = {
             auto_session_suppress_dirs = { "~/", "~/workspace", "~/Downloads", "/", "~/AppData", "~/Documents" },

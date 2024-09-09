@@ -10,6 +10,8 @@ return {
     },
     {
         "Saecki/crates.nvim",
+        version = false,
+        lazy = true,
         event = { "BufReadPost Cargo.toml", "BufWritePost Cargo.toml", "BufNewFile Cargo.toml" },
         opts = {
             completion = {
@@ -19,6 +21,8 @@ return {
     },
     {
         "mrcjkb/rustaceanvim",
+        version = false,
+        lazy = true,
         event = { 'BufReadPost *.rs', 'BufWritePost *.rs', 'BufNewFile *.rs' },
     },
 }
