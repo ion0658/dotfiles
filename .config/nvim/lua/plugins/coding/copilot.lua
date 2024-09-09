@@ -3,7 +3,7 @@ return {
         "zbirenbaum/copilot.lua",
         cmd = "Copilot",
         build = ":Copilot auth",
-        optional = true,
+        lazy = true,
         opts = {
             suggestion = { enabled = false },
             panel = { enabled = false },
@@ -19,8 +19,8 @@ return {
         dependencies = {
             {
                 "zbirenbaum/copilot-cmp",
-                dependencies = "copilot.lua",
-                opts = {},
+                -- dependencies = { "copilot.lua", lazy = true },
+                lazy = true,
             },
         },
         opts = function(_, otps)
@@ -29,7 +29,7 @@ return {
     },
     {
         "zbirenbaum/copilot-cmp",
-        dependencies = { "copilot.lua", "onsails/lspkind.nvim" },
+        -- dependencies = { "copilot.lua", "onsails/lspkind.nvim" },
         event = { "InsertEnter" },
     },
 }

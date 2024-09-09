@@ -2,10 +2,6 @@ return {
     {
         "folke/noice.nvim",
         enabled = true,
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-            'rcarriga/nvim-notify'
-        },
         event = "VeryLazy",
         opts = {
             lsp = {
@@ -14,7 +10,6 @@ return {
                 },
             },
         },
-        config = true,
         keys = {
             { "<leader>sn",  "",                                                            desc = "+noice" },
             { "<S-Enter>",   function() require("noice").redirect(vim.fn.getcmdline()) end, mode = "c",                              desc = "Redirect Cmdline" },

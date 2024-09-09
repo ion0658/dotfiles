@@ -33,14 +33,22 @@ return {
     {
         "p00f/clangd_extensions.nvim",
         event = {
-            'BufReadPost *.c,*.cpp,*.h,*,hpp',
-            'BufWritePost *.c,*.cpp,*.h,*,hpp',
-            'BufNewFile *.c,*.cpp,*.h,*,hpp',
+            'BufReadPost *.c',
+            'BufReadPost *.cpp',
+            'BufReadPost *.h',
+            'BufReadPost *.hpp',
+            'BufWritePost *.c',
+            'BufWritePost *.cpp',
+            'BufWritePost *.h',
+            'BufWritePost *.hpp',
+            'BufNewFile *.c',
+            'BufNewFile *.cpp',
+            'BufNewFile *.h',
+            'BufNewFile *.hpp',
         },
-        config = function() end,
         opts = {
             inlay_hints = {
-                inline = false,
+                inline = true,
             },
             ast = {
                 --These require codicons (https://github.com/microsoft/vscode-codicons)

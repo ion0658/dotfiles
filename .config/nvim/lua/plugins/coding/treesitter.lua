@@ -1,15 +1,12 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        version      = false,
-        build        = ":TSUpdate",
-        event        = { "VeryLazy" },
-        dependencies = {
-            { "nvim-treesitter/nvim-treesitter-textobjects" },
-        },
-        cmd          = { "TSUpdateSync", "TSUpdate", "TSInstall" },
-        opts_extend  = { "ensure_installed" },
-        opts         = {
+        version     = false,
+        build       = ":TSUpdate",
+        event       = { "VeryLazy" },
+        cmd         = { "TSUpdateSync", "TSUpdate", "TSInstall" },
+        opts_extend = { "ensure_installed" },
+        opts        = {
             highlight = { enable = true },
             indent = { enable = true },
             autotag = { enable = true },
@@ -41,22 +38,20 @@ return {
                         ["[A"] = "@parameter.inner",
                     },
                 }
-            }
+            },
         },
-        config       = function(_, opts)
+        config      = function(_, opts)
             require("nvim-treesitter.configs").setup(opts)
         end
     },
     {
         "nvim-treesitter/nvim-treesitter-textobjects",
         version = false,
-        optional = true,
         lazy = true
     },
     {
         "nvim-treesitter/nvim-treesitter-context",
         version = false,
-        optional = true,
         lazy = true
     }
 }

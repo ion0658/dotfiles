@@ -1,10 +1,6 @@
 return {
     {
         'b0o/incline.nvim',
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
-            "lewis6991/gitsigns.nvim",
-        },
         event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
         opts = {
             render = function(props)

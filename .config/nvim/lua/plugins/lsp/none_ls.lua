@@ -1,9 +1,13 @@
 return {
+    { "nvimtools/none-ls.nvim", lazy = true, },
+    { "vim-test/vim-test",      lazy = true },
     {
-        "nvimtools/none-ls.nvim",
-        dependencies = { "nvim-lua/plenary.nvim", "vim-test/vim-test" },
-        optional = true,
-        lazy = true,
-        config = true
-    }
+        "jay-babu/mason-null-ls.nvim",
+        version     = false,
+        event       = { "VeryLazy", 'BufReadPre', 'BufWritePre', 'BufNewFile' },
+        opts_extend = { "ensure_installed" },
+        opts        = {
+            ensure_installed = {}
+        },
+    },
 }

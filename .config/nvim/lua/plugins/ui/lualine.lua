@@ -1,12 +1,10 @@
 return {
-
     {
         "nvim-lualine/lualine.nvim",
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
-            "stevearc/aerial.nvim",
-        },
         event = "VeryLazy",
+        dependencies = {
+            { 'stevearc/aerial.nvim', lazy = true },
+        },
         opts = function()
             -- Color table for highlights
             -- stylua: ignore
@@ -52,7 +50,7 @@ return {
                         { "aerial" },
                     },
                     lualine_c = {
-                        { "diagnostics", },
+                        { "diagnostics" },
                     },
 
                     --------------

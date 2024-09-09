@@ -60,11 +60,6 @@ return {
     {
         'rmagatti/auto-session',
         enabled = true,
-        dependencies = {
-            "nvim-neo-tree/neo-tree.nvim",
-            "nvim-telescope/telescope.nvim",
-            "b0o/incline.nvim",
-        },
         event = { "VimEnter" },
         opts = {
             auto_session_suppress_dirs = { "~/", "~/workspace", "~/Downloads", "/", "~/AppData", "~/Documents" },

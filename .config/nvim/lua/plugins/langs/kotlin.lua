@@ -1,6 +1,5 @@
 local ensure_installed = {
     -- kotlin
-    "kotlin",
     "kotlin-language-server"
 }
 

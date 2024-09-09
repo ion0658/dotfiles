@@ -1,12 +1,14 @@
 return {
+    { "onsails/lspkind.nvim", lazy = true },
+    { "hrsh7th/cmp-nvim-lsp", lazy = true },
+
     {
         "hrsh7th/nvim-cmp",
         event = "InsertEnter",
         dependencies = {
-            { "hrsh7th/cmp-nvim-lsp" },
-            { "hrsh7th/cmp-buffer" },
-            { "hrsh7th/cmp-path" },
-            { "onsails/lspkind.nvim" },
+            { "hrsh7th/cmp-nvim-lsp", lazy = true },
+            { "hrsh7th/cmp-buffer",   lazy = true },
+            { "hrsh7th/cmp-path",     lazy = true },
         },
         opts = {
             sources = {
@@ -14,6 +16,7 @@ return {
                 { name = "path",     group_index = 2, priority = 80 },
                 { name = "buffer",   group_index = 1, priority = 90 },
             },
+            extends = { 'cmp-nvim-lsp' }
         },
         config = function(_, opts)
             local cmp = require("cmp")

@@ -1,15 +1,6 @@
 return {
     {
         "nvim-telescope/telescope.nvim",
-        dependencies = {
-            'nvim-lua/plenary.nvim',
-            'nvim-treesitter/nvim-treesitter',
-            'nvim-telescope/telescope-ui-select.nvim',
-            "nvim-telescope/telescope-project.nvim",
-            "nvim-telescope/telescope-file-browser.nvim",
-            'rmagatti/auto-session',
-        },
-        event = { "VeryLazy" },
         cmd = "Telescope",
         opts = {
             defaults = {
@@ -43,17 +34,7 @@ return {
                     show_columns = 'both'
                 },
             }
-
         },
-        config = function(_, opts)
-            require('aerial').setup()
-            local p = require("telescope")
-            p.setup(opts)
-            p.load_extension("ui-select")
-            p.load_extension("file_browser")
-            p.load_extension("project")
-            p.load_extension("aerial")
-        end,
         keys = {
             {
                 "<leader>ff",
@@ -96,5 +77,12 @@ return {
                 desc = "Search Session"
             }
         },
-    }
+        config = function(_, opts)
+            require("aerial").setup()
+            require("telescope").setup(opts)
+        end
+    },
+    { "nvim-telescope/telescope-project.nvim",      lazy = true },
+    { 'nvim-telescope/telescope-ui-select.nvim',    lazy = true },
+    { "nvim-telescope/telescope-file-browser.nvim", lazy = true },
 }
