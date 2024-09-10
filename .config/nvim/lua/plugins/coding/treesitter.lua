@@ -4,7 +4,7 @@ return {
         version     = false,
         lazy        = true,
         build       = ":TSUpdate",
-        event       = { "VeryLazy" },
+        event       = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
         cmd         = { "TSUpdateSync", "TSUpdate", "TSInstall" },
         opts_extend = { "ensure_installed" },
         opts        = {
@@ -48,14 +48,13 @@ return {
     {
         "nvim-treesitter/nvim-treesitter-textobjects",
         version = false,
-        lazy = true,
-        event = { "VeryLazy" },
-
+        lazy    = true,
+        event   = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
     },
     {
         "nvim-treesitter/nvim-treesitter-context",
         version = false,
         lazy    = true,
-        event   = { "VeryLazy" },
+        event   = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
     }
 }
