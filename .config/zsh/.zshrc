@@ -178,6 +178,8 @@ if [ ! -f $XDG_CONFIG_HOME/zsh/.zshrc.zwc -o $XDG_CONFIG_HOME/zsh/.zshrc -nt $XD
     zcompile $XDG_CONFIG_HOME/zsh/.zshrc
 fi
 
+# pyenv
+export PYENV_ROOT="$XDG_CACHE_HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
-# bun completions
-[ -s "/mnt/g/cache/bun/_bun" ] && source "/mnt/g/cache/bun/_bun"
