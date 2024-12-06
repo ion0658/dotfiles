@@ -8,7 +8,8 @@ return {
         opts = {
             ensure_installed = {
                 "c",
-                "cpp"
+                "cpp",
+                "objc"
             }
         }
     },
@@ -37,14 +38,20 @@ return {
         event = {
             'BufReadPost *.c',
             'BufReadPost *.cpp',
+            'BufReadPost *.m',
+            'BufReadPost *.mm',
             'BufReadPost *.h',
             'BufReadPost *.hpp',
             'BufWritePost *.c',
             'BufWritePost *.cpp',
+            'BufWritePost *.m',
+            'BufWritePost *.mm',
             'BufWritePost *.h',
             'BufWritePost *.hpp',
             'BufNewFile *.c',
             'BufNewFile *.cpp',
+            'BufNewFile *.m',
+            'BufNewFile *.mm',
             'BufNewFile *.h',
             'BufNewFile *.hpp',
         },
