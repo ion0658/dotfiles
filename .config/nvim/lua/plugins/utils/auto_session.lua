@@ -81,21 +81,21 @@ return {
     {
         'rmagatti/auto-session',
         version = false,
-        lazy = true,
+        lazy = false,
         event = { "VimEnter" },
         opts = {
-            auto_session_suppress_dirs = { "~/", "~/workspace", "~/Downloads", "/", "~/AppData", "~/Documents" },
-            auto_session_enable_last_session = false,
-            auto_restore_enabled = true,
-            auto_save_enabled = true,
-            auto_restore_lazy_delay_enabled = true,
+            suppressed_dirs = { "~/", "~/workspace", "~/Downloads", "/", "~/AppData", "~/Documents" },
+            auto_session_last_session = false,
+            auto_restore = true,
+            auto_save = true,
+            lazy_support = true,
             session_lens = {
                 load_on_setup = true,
                 theme_conf = { border = true },
                 previewer = false,
                 buftypes_to_ignore = {},
             },
-            bypass_session_save_file_types = { "neo-tree" },
+            bypas_save_filetypes = { "neo-tree" },
             pre_save_cmds = {
                 close_neo_tree,
                 disable_incline
@@ -106,7 +106,7 @@ return {
                 delete_shadata
             },
             cwd_change_handling = {
-                pre_cwd_changed_hool = function()
+                pre_cwd_changed_hook = function()
                     close_neo_tree()
                     disable_incline()
                     clear_hidden_buffers()
