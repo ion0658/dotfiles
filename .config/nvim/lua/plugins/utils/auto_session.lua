@@ -47,7 +47,7 @@ local function clear_hidden_buffers()
 end
 
 local function delete_shadata()
-    local shada_path = vim.fn.expand(vim.fn.stdpath "data" .. "/shada")
+    local shada_path = vim.fn.expand(vim.fn.stdpath "state" .. "/shada")
     local files = vim.fn.glob(shada_path .. "/*", false, true)
     local all_success = 0
     for _, file in ipairs(files) do
