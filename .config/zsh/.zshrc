@@ -143,7 +143,6 @@ if not command -v cargo &> /dev/null ; then
     echo cargo not found
 fi
 
-
 if command -v eza &> /dev/null ; then
     alias ls='eza'
 fi
@@ -172,16 +171,17 @@ if command -v jj &> /dev/null ; then
     source <(jj util completion zsh)
 fi
 
-#.zshrc自動コンパイル
-if [ ! -f $XDG_CONFIG_HOME/zsh/.zshrc.zwc -o $XDG_CONFIG_HOME/zsh/.zshrc -nt $XDG_CONFIG_HOME/zsh/.zshrc.zwc ]; then
-    rm -rf $XDG_CONFIG_HOME/zsh/.zcompdump
-    zcompile $XDG_CONFIG_HOME/zsh/.zshrc
-fi
-
 # pyenv
 export PYENV_ROOT="$XDG_CACHE_HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 if command -v pyenv &> /dev/null ; then
     eval "$(pyenv init -)"
 fi
+
+#.zshrc自動コンパイル
+if [ ! -f $XDG_CONFIG_HOME/zsh/.zshrc.zwc -o $XDG_CONFIG_HOME/zsh/.zshrc -nt $XDG_CONFIG_HOME/zsh/.zshrc.zwc ]; then
+    rm -rf $XDG_CONFIG_HOME/zsh/.zcompdump
+    zcompile $XDG_CONFIG_HOME/zsh/.zshrc
+fi
+
 
