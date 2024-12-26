@@ -6,6 +6,18 @@ return {
         keys = {
             { "<leader>cl", "<cmd>LspInfo<cr>", desc = "Lsp Info" },
         },
+        config = function()
+            local lspconfig = require('lspconfig')
+            lspconfig.sourcekit.setup {
+                capabilities = {
+                    workspace = {
+                        didChangeWatchedFiles = {
+                            dynamicRegistration = true,
+                        },
+                    },
+                },
+            }
+        end
     },
     {
         "ray-x/lsp_signature.nvim",
