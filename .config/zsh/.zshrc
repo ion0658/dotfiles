@@ -124,6 +124,9 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export DENO_INSTALL="$XDG_DATA_HOME/deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
+# go
+export GOPATH="$XDG_DATA_HOME/go"
+
 # sccache
 export SCCACHE_DIR="$XDG_CACHE_HOME/sccache"
 
