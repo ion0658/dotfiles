@@ -47,3 +47,11 @@ vim.api.nvim_create_autocmd({ "BufReadPost" }, {
 
 -- format on save with LSP
 vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
+
+-- windowの20%をscrolloffに設定
+vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "WinEnter" }, {
+    group = vim.api.nvim_create_augroup("UserNvimConfig", {}),
+    callback = function()
+        vim.opt.scrolloff = math.floor(vim.o.lines * 0.2)
+    end,
+})

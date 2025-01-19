@@ -4,7 +4,7 @@ local ensure_installed = {
     "autotools_ls",
     "cmake",
     "vimls",
-    "sqls",
+    "sqls"
 }
 
 return {
@@ -44,3 +44,4 @@ return {
         },
     }
 }
+

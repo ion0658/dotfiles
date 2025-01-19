@@ -1,23 +1,29 @@
 return {
     {
         "williamboman/mason.nvim",
-        version = false,
-        lazy = true,
-        cmd = "Mason",
-        keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
-        build = ":MasonUpdate",
-        config = true
+        version      = false,
+        lazy         = true,
+        cmd          = "Mason",
+        keys         = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
+        build        = ":MasonUpdate",
+        config       = true,
+        dependencies = {
+            { 'rcarriga/nvim-notify', lazy = true }
+        }
     },
     {
         "williamboman/mason-lspconfig.nvim",
-        version     = false,
-        lazy        = true,
-        event       = { "VeryLazy", 'BufReadPre', 'BufWritePre', 'BufNewFile' },
-        opts_extend = { "ensure_installed" },
-        opts        = {
+        version      = false,
+        lazy         = true,
+        event        = { "VeryLazy", 'BufReadPre', 'BufWritePre', 'BufNewFile' },
+        dependencies = {
+            { 'rcarriga/nvim-notify', lazy = true }
+        },
+        opts_extend  = { "ensure_installed" },
+        opts         = {
             ensure_installed = {},
         },
-        config      = function(_, opts)
+        config       = function(_, opts)
             local p = require("mason-lspconfig")
             p.setup(opts)
             p.setup_handlers {
@@ -56,3 +62,4 @@ return {
         end,
     },
 }
+

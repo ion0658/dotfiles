@@ -1,12 +1,15 @@
 return {
     {
-        "folke/trouble.nvim",
+        "cappyzawa/trim.nvim",
         version = false,
         lazy = true,
         event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
         opts = {
-            use_diagnostic_signs = true
-        },
+            trim_last_line = false,
+            patterns = {
+                [[%s/\n*\%$/\r/]],
+            },
+        }
     }
 }
 

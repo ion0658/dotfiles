@@ -26,3 +26,4 @@ return {
         event = { 'BufReadPost *.rs', 'BufWritePost *.rs', 'BufNewFile *.rs' },
     },
 }
+
