@@ -2,7 +2,6 @@ local ensure_installed = {
     "bashls",
     "lua_ls",
     "autotools_ls",
-    "cmake",
     "vimls",
 }
 
