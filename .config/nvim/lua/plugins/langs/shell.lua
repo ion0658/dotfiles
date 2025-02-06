@@ -1,6 +1,7 @@
 local ensure_installed = {
     "bashls",
     "lua_ls",
+    "stylua",
     "autotools_ls",
     "vimls",
 }

@@ -179,6 +179,7 @@ export PYENV_ROOT="$XDG_CACHE_HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 if command -v pyenv &> /dev/null ; then
     eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
 fi
 
 #.zshrc自動コンパイル
@@ -186,5 +187,4 @@ if [ ! -f $XDG_CONFIG_HOME/zsh/.zshrc.zwc -o $XDG_CONFIG_HOME/zsh/.zshrc -nt $XD
     rm -rf $XDG_CONFIG_HOME/zsh/.zcompdump
     zcompile $XDG_CONFIG_HOME/zsh/.zshrc
 fi
-
 
