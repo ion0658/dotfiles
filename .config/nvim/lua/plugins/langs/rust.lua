@@ -25,5 +25,12 @@ return {
         lazy = true,
         event = { 'BufReadPost *.rs', 'BufWritePost *.rs', 'BufNewFile *.rs' },
     },
+    {
+        "cordx56/rustowl",
+        version = false,
+        lazy = true,
+        dependencies = { "neovim/nvim-lspconfig", lazy = true },
+        event = { 'BufReadPost *.rs', 'BufWritePost *.rs', 'BufNewFile *.rs' },
+    }
 }
 
