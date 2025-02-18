@@ -16,7 +16,9 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.wrap = false
 vim.opt.termguicolors = true
 
-vim.g.python3_host_prog = vim.env.PYENV_ROOT .. '/versions/neovim3/bin/python'
+if vim.env.PYENV_ROOT then
+    vim.g.python3_host_prog = vim.env.PYENV_ROOT .. '/versions/neovim3/bin/python'
+end
 -- disable perl provider
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
