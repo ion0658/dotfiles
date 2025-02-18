@@ -1,6 +1,4 @@
 local ensure_installed = {
-    -- kotlin
-    "kotlin-language-server"
 }
 
 return {
@@ -20,9 +18,6 @@ return {
     },
     {
         "jay-babu/mason-null-ls.nvim",
-        opts = {
-            ensure_installed = ensure_installed
-        },
     },
     {
         "jay-babu/mason-nvim-dap.nvim",

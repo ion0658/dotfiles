@@ -22,9 +22,6 @@ return {
     },
     {
         "jay-babu/mason-null-ls.nvim",
-        opts = {
-            ensure_installed = ensure_installed
-        },
     },
     {
         "jay-babu/mason-nvim-dap.nvim",

@@ -36,9 +36,6 @@ return {
     },
     {
         "jay-babu/mason-nvim-dap.nvim",
-        opts = {
-            ensure_installed = ensure_installed
-        },
     },
     {
         "norcalli/nvim-colorizer.lua",

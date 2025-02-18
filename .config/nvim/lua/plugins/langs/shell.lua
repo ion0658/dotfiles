@@ -1,7 +1,6 @@
 local ensure_installed = {
     "bashls",
     "lua_ls",
-    "stylua",
     "autotools_ls",
     "vimls",
 }
@@ -32,9 +31,6 @@ return {
     },
     {
         "jay-babu/mason-null-ls.nvim",
-        opts = {
-            ensure_installed = ensure_installed
-        },
     },
     {
         "jay-babu/mason-nvim-dap.nvim",
