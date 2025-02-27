@@ -46,6 +46,8 @@ return {
             -- See the full "keymap" documentation for information on defining your own keymap.
             keymap = {
                 preset = 'default',
+                ["<C-space>"] = {},
+                ["<C-o>"] = { "show", "show_documentation", "hide_documentation" },
                 ["<TAB>"] = { "accept", "fallback" }
             },
 
@@ -67,7 +69,20 @@ return {
                     copilot = {
                         name = "copilot",
                         module = "blink.compat.source",
-                        score_offset = -5
+                        score_offset = 100,
+                        async = true,
+                    },
+                    path = {
+                        score_offset = 70,
+                    },
+                    lsp = {
+                        score_offset = 90,
+                    },
+                    snippets = {
+                        score_offset = 80,
+                    },
+                    buffer = {
+                        score_offset = 60,
                     }
                 }
             },
@@ -78,7 +93,24 @@ return {
             --
             -- See the fuzzy documentation for more information
             fuzzy = { implementation = "prefer_rust_with_warning" },
-            signature = { enabled = true }
+            completion = {
+                trigger = {
+                    show_on_trigger_character = true,
+                    show_on_insert_on_trigger_character = true,
+                },
+                list = { selection = { preselect = true, auto_insert = false } },
+                menu = {
+                    draw = {
+                        columns = {
+                            { "label", "label_description", gap = 1 }, { "kind_icon", "kind" }
+                        },
+                        treesitter = { "lsp" },
+                    },
+                },
+                ghost_text = { enabled = true },
+            },
+            cmdline = { enabled = true },
+            signature = { enabled = true },
         },
         opts_extend = { "sources.default" }
     }
