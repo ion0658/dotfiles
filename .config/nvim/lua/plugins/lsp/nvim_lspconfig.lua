@@ -3,20 +3,29 @@ return {
         'neovim/nvim-lspconfig',
         version = false,
         lazy = true,
+        dependencies = { 'saghen/blink.cmp', lazy = true },
         keys = {
             { "<leader>cl", "<cmd>LspInfo<cr>", desc = "Lsp Info" },
         },
-        config = function()
-            local lspconfig = require('lspconfig')
-            lspconfig.sourcekit.setup {
-                capabilities = {
-                    workspace = {
-                        didChangeWatchedFiles = {
-                            dynamicRegistration = true,
+        opts = {
+            servers = {
+                sourcekit = {
+                    capabilities = {
+                        workspace = {
+                            didChangeWatchedFiles = {
+                                dynamicRegistration = true,
+                            },
                         },
                     },
-                },
+                }
             }
+        },
+        config = function(_, opts)
+            local lspconfig = require('lspconfig')
+            for server, config in pairs(opts.servers) do
+                config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
+                lspconfig[server].setup(config)
+            end
         end
     },
     {

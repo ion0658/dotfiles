@@ -19,7 +19,9 @@ return {
         "zbirenbaum/copilot-cmp",
         version = false,
         lazy = true,
-        dependencies = { "zbirenbaum/copilot.lua", lazy = true },
+        dependencies = {
+            { "zbirenbaum/copilot.lua", lazy = true },
+        },
         event = { "InsertEnter" },
         opts = {}
     },
