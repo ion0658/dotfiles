@@ -9,6 +9,7 @@ return {
         },
         opts = {
             servers = {
+                clangd = {},
                 sourcekit = {
                     capabilities = {
                         workspace = {

@@ -56,6 +56,20 @@ return {
                             filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" }
                         }
                     end
+                    if server_name == "clangd" then
+                        server_config = {
+                            cmd = {
+                                "clangd",
+                                "--background-index",
+                                "--clang-tidy",
+                                "--cross-file-rename"
+                            },
+                            filetypes = { "c", "cpp", "objc", "objcpp" },
+                            init_options = {
+                                clangdFileStatus = true
+                            }
+                        }
+                    end
                     require("lspconfig")[server_name].setup(server_config)
                 end
             }
