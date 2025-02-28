@@ -1,6 +1,6 @@
 local ensure_installed = {
     "clangd",
-    "neocmakelsp",
+    "neocmake",
 }
 
 return {
