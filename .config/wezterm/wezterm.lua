@@ -7,15 +7,19 @@ if wezterm.config_builder then
 end
 
 -- カラースキームの設定
--- config.color_scheme = "tokyonight"
 config.color_scheme = 'iceberg-dark'
---config.font = wezterm.font("Cascadia Mono NF")
-config.font = wezterm.font_with_fallback({
-    "Cascadia Mono NF",
-})
-config.font_size = 12.0
-
+config.window_background_opacity = 0.9
+config.window_padding = {
+    left = 20,
+    right = 20,
+    top = 20,
+    bottom = 20,
+}
 -- ui settings
+config.font = wezterm.font_with_fallback({
+    "Cascadia Code NF",
+})
+config.font_size = 16.0
 config.use_ime = true
 config.enable_scroll_bar = true
 config.tab_bar_at_bottom = true
@@ -120,3 +124,4 @@ end
 
 config.launch_menu = launch_menu
 return config
+

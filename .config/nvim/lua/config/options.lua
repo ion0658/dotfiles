@@ -15,6 +15,8 @@ vim.opt.autoindent = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.wrap = false
 vim.opt.termguicolors = true
+vim.opt.winblend = 10
+vim.opt.pumblend = 10
 
 if vim.env.PYENV_ROOT then
     vim.g.python3_host_prog = vim.env.PYENV_ROOT .. '/versions/neovim3/bin/python'
