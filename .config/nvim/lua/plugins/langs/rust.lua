@@ -28,9 +28,9 @@ return {
     {
         "cordx56/rustowl",
         version = false,
-        -- lazy = true,
+        lazy = true,
         dependencies = { "neovim/nvim-lspconfig", lazy = true },
-        -- event = { 'BufReadPost *.rs', 'BufWritePost *.rs', 'BufNewFile *.rs' },
+        event = { 'BufReadPost *.rs', 'BufWritePost *.rs', 'BufNewFile *.rs' },
         config = function()
             local lspconfig = require("lspconfig")
             lspconfig.rustowlsp.setup({})
