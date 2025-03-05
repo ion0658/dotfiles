@@ -10,7 +10,7 @@ return {
     },
     {
         "Saecki/crates.nvim",
-        version = false,
+        version = "*",
         lazy = true,
         event = { "BufReadPost Cargo.toml", "BufWritePost Cargo.toml", "BufNewFile Cargo.toml" },
         opts = {
@@ -27,7 +27,7 @@ return {
     },
     {
         "cordx56/rustowl",
-        version = false,
+        version = "*",
         lazy = true,
         dependencies = { "neovim/nvim-lspconfig", lazy = true },
         event = { 'BufReadPost *.rs', 'BufWritePost *.rs', 'BufNewFile *.rs' },

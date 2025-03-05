@@ -30,7 +30,7 @@ return {
     },
     {
         "p00f/clangd_extensions.nvim",
-        version = false,
+        version = "*",
         lazy = true,
         event = {
             'BufReadPost *.c',
