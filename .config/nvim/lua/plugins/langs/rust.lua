@@ -1,3 +1,7 @@
+local ensure_installed = {
+    "rust_analyzer",
+}
+
 return {
     {
         "nvim-treesitter/nvim-treesitter",
@@ -6,6 +10,21 @@ return {
                 "rust",
                 "ron",
             }
+        },
+    },
+    {
+        "williamboman/mason-lspconfig.nvim",
+        opts = {
+            ensure_installed = ensure_installed
+        },
+    },
+    {
+        "jay-babu/mason-null-ls.nvim",
+    },
+    {
+        "jay-babu/mason-nvim-dap.nvim",
+        opts = {
+            ensure_installed = ensure_installed
         },
     },
     {
@@ -18,12 +37,6 @@ return {
                 cmp = { enabled = true },
             },
         },
-    },
-    {
-        "mrcjkb/rustaceanvim",
-        version = false,
-        lazy = true,
-        event = { 'BufReadPost *.rs', 'BufWritePost *.rs', 'BufNewFile *.rs' },
     },
     {
         "cordx56/rustowl",
