@@ -60,4 +60,3 @@ vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "WinEnter" }, {
         vim.opt.scrolloff = math.floor(vim.o.lines * 0.2)
     end,
 })
-

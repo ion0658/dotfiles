@@ -58,4 +58,3 @@ return {
         event   = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
     }
 }
-

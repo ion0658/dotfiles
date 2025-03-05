@@ -44,4 +44,3 @@ return {
         event = { "BufReadPre", "BufNewFile", "BufWritePre" },
     },
 }
-

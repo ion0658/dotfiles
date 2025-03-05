@@ -6,4 +6,3 @@ return {
         lazy = true,
     }
 }
-
