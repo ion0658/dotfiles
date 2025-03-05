@@ -1,13 +1,14 @@
 return {
     {
         'neovim/nvim-lspconfig',
-        version = false,
-        lazy = true,
+        version      = false,
+        lazy         = true,
         dependencies = { 'saghen/blink.cmp', lazy = true },
-        keys = {
+        event        = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
+        keys         = {
             { "<leader>cl", "<cmd>LspInfo<cr>", desc = "Lsp Info" },
         },
-        opts = {
+        opts         = {
             servers = {
                 rust_analyzer = {
                     cachePriming = {
@@ -16,7 +17,7 @@ return {
                 }
             }
         },
-        config = function(_, opts)
+        config       = function(_, opts)
             local lspconfig = require('lspconfig')
             for server, config in pairs(opts.servers) do
                 config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)

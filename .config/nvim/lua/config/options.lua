@@ -19,7 +19,7 @@ vim.opt.winblend = 10
 vim.opt.pumblend = 10
 
 if vim.env.PYENV_ROOT then
-    vim.g.python3_host_prog = vim.env.PYENV_ROOT .. '/versions/neovim3/bin/python'
+    vim.g.python3_host_prog = vim.env.PYENV_BIN .. '/python'
 end
 -- disable perl provider
 vim.g.loaded_perl_provider = 0

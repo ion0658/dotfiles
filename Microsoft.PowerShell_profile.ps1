@@ -1,4 +1,3 @@
-
 #f45873b3-b655-43a6-b217-97c00aa0db58 PowerToys CommandNotFound module
 
 Import-Module -Name Microsoft.WinGet.CommandNotFound
@@ -16,6 +15,8 @@ $Env:DISCORD_USER_DATA_DIR = "$Env:XDG_CONFIG_HOME\discord"
 $Env:GOPATH = "$Env:XDG_DATA_HOME\go"
 $Env:NPM_CONFIG_USERCONFIG = "$Env:XDG_CONFIG_HOME\npm\npmrc"
 $Env:NUGET_PACKAGES = "$Env:XDG_CACHE_HOME\nuget"
+$Env:PYENV_ROOT = "$Env:XDG_DATA_HOME\.venv"
+$Env:PYENV_BIN = "$Env:PYENV_ROOT\Scripts"
 
 if(Check-Command -cmdname "starship") {
     Invoke-Expression (&starship init powershell)
@@ -40,4 +41,3 @@ if(Check-Command -cmdname "fd") {
 if(Check-Command -cmdname "rg") {
     Set-Alias grep rg
 }
-
