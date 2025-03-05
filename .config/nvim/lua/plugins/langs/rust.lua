@@ -33,7 +33,11 @@ return {
         event = { 'BufReadPost *.rs', 'BufWritePost *.rs', 'BufNewFile *.rs' },
         config = function()
             local lspconfig = require("lspconfig")
-            lspconfig.rustowlsp.setup({})
+            lspconfig.rustowl.setup({
+                trigger = {
+                    hover = true,
+                },
+            })
         end,
     }
 }
