@@ -175,7 +175,7 @@ if command -v jj &> /dev/null ; then
 fi
 
 # pyenv
-export PYENV_ROOT="$XDG_CACHE_HOME/.pyenv"
+export PYENV_ROOT="$XDG_CACHE_HOME/.venv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 if command -v pyenv &> /dev/null ; then
     eval "$(pyenv init -)"
