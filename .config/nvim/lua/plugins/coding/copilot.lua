@@ -13,6 +13,7 @@ return {
                 help = true,
                 gitcommit = true,
             },
+            copilot_model = "gpt-4o-copilot"
         },
     },
     {
