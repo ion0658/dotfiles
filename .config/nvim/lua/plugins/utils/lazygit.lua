@@ -1,6 +1,6 @@
 return {
     "kdheepak/lazygit.nvim",
-    version = false,
+    version = "*",
     lazy = true,
     cmd = {
         "LazyGit",

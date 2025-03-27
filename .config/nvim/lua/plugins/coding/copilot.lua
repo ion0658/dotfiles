@@ -1,7 +1,7 @@
 return {
     {
         "zbirenbaum/copilot.lua",
-        version = false,
+        version = "*",
         lazy = true,
         cmd = "Copilot",
         build = ":Copilot auth",
@@ -18,7 +18,7 @@ return {
     },
     {
         "zbirenbaum/copilot-cmp",
-        version = false,
+        version = "*",
         lazy = true,
         dependencies = {
             { "zbirenbaum/copilot.lua", lazy = true },

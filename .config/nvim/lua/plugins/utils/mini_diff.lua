@@ -1,7 +1,7 @@
 return {
     {
         'echasnovski/mini.diff',
-        version = false,
+        version = "*",
         lazy = true,
         event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
     }

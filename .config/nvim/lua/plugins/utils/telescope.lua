@@ -1,7 +1,7 @@
 return {
     {
         "nvim-telescope/telescope.nvim",
-        version = false,
+        version = "*",
         lazy = true,
         cmd = "Telescope",
         opts = {
@@ -86,17 +86,17 @@ return {
     },
     {
         "nvim-telescope/telescope-project.nvim",
-        version = false,
+        version = "*",
         lazy = true
     },
     {
         'nvim-telescope/telescope-ui-select.nvim',
-        version = false,
+        version = "*",
         lazy = true
     },
     {
         "nvim-telescope/telescope-file-browser.nvim",
-        version = false,
+        version = "*",
         lazy = true
     },
 }

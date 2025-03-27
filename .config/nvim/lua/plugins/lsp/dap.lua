@@ -1,12 +1,12 @@
 return {
     {
         "mfussenegger/nvim-dap",
-        version = false,
+        version = "*",
         lazy = true,
     },
     {
         "jay-babu/mason-nvim-dap.nvim",
-        version      = false,
+        version      = "*",
         lazy         = true,
         event        = { 'BufReadPre', 'BufWritePre', 'BufNewFile' },
         dependencies = {

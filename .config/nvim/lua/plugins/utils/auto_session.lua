@@ -80,7 +80,7 @@ end
 return {
     {
         'rmagatti/auto-session',
-        version = false,
+        version = "*",
         lazy = false,
         event = { "VimEnter" },
         opts = {

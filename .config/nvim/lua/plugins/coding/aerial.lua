@@ -1,7 +1,7 @@
 return {
     {
         'stevearc/aerial.nvim',
-        version = false,
+        version = "*",
         lazy = true,
     }
 }

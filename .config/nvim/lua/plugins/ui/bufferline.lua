@@ -1,7 +1,7 @@
 return {
     {
         'akinsho/bufferline.nvim',
-        version = false,
+        version = "*",
         lazy = true,
         event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
         keys = {
