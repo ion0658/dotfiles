@@ -32,7 +32,6 @@ return {
     {
         "toppair/peek.nvim",
         cmd = { "PeekOpen", "PeekClose" },
-        -- event = { 'BufReadPost *.md', 'BufWritePost *.md', 'BufNewFile *.md' },
         build = "deno task --quiet build:fast",
         config = function()
             require("peek").setup()
