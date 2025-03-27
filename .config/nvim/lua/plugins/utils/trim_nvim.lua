@@ -1,7 +1,7 @@
 return {
     {
         "cappyzawa/trim.nvim",
-        version = false,
+        version = "*",
         lazy = true,
         event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
         opts = {}

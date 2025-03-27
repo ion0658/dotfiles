@@ -1,7 +1,7 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        version     = false,
+        version     = "*",
         lazy        = true,
         build       = ":TSUpdate",
         event       = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
@@ -47,13 +47,13 @@ return {
     },
     {
         "nvim-treesitter/nvim-treesitter-textobjects",
-        version = false,
+        version = "*",
         lazy    = true,
         event   = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
     },
     {
         "nvim-treesitter/nvim-treesitter-context",
-        version = false,
+        version = "*",
         lazy    = true,
         event   = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
     }

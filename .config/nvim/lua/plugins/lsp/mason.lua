@@ -1,7 +1,7 @@
 return {
     {
         "williamboman/mason.nvim",
-        version      = false,
+        version      = "*",
         lazy         = true,
         cmd          = "Mason",
         keys         = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
@@ -13,7 +13,7 @@ return {
     },
     {
         "williamboman/mason-lspconfig.nvim",
-        version      = false,
+        version      = "*",
         lazy         = true,
         event        = { "VeryLazy", 'BufReadPre', 'BufWritePre', 'BufNewFile' },
         dependencies = {

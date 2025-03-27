@@ -1,9 +1,9 @@
 return {
-    { "nvimtools/none-ls.nvim", version = false, lazy = true, },
-    { "vim-test/vim-test",      version = false, lazy = true },
+    { "nvimtools/none-ls.nvim", version = "*", lazy = true, },
+    { "vim-test/vim-test",      version = "*", lazy = true },
     {
         "jay-babu/mason-null-ls.nvim",
-        version      = false,
+        version      = "*",
         lazy         = true,
         event        = { "VeryLazy", 'BufReadPre', 'BufWritePre', 'BufNewFile' },
         dependencies = {

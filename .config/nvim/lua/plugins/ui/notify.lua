@@ -1,7 +1,7 @@
 return {
     {
         'rcarriga/nvim-notify',
-        version = false,
+        version = "*",
         lazy = true,
         keys = {
             {
@@ -12,5 +12,8 @@ return {
                 desc = "Dismiss All Notifications",
             },
         },
+        opts = {
+            background_colour = "#000000",
+        }
     }
 }

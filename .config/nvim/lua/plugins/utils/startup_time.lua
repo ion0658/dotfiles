@@ -1,6 +1,6 @@
 return {
     "dstein64/vim-startuptime",
-    version = false,
+    version = "*",
     lazy = true,
     cmd = "StartupTime",
 }

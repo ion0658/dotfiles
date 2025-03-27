@@ -1,8 +1,8 @@
 return {
     {
         "numToStr/Comment.nvim",
-        event = "InsertEnter",
-        version = false,
+        version = "*",
         lazy = true,
+        event = "InsertEnter",
     },
 }

@@ -1,7 +1,7 @@
 return {
     {
         "shellRaining/hlchunk.nvim",
-        version = false,
+        version = "*",
         lazy = true,
         event = { "BufReadPost", "BufWritePost", "BufNewFile" },
         config = function()

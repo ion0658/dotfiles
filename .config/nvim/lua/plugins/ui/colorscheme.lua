@@ -1,6 +1,7 @@
 return {
     {
         "sainnhe/sonokai",
+        version = "*",
         enabled = true,
         priority = 8000, -- Very high priority is required
         config = function()
