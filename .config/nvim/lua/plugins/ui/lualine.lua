@@ -5,7 +5,8 @@ return {
         lazy = true,
         event = "VeryLazy",
         dependencies = {
-            { 'stevearc/aerial.nvim', lazy = true },
+            { 'stevearc/aerial.nvim',      lazy = true },
+            { 'AndreM222/copilot-lualine', lazy = true }
         },
         opts = function()
             -- Color table for highlights
@@ -62,6 +63,11 @@ return {
 
                     lualine_x = {
                         { lsp_names },
+                        {
+                            "copilot",
+                            show_colors = true,
+                            show_loading = true,
+                        },
                         { "encoding" },
                         { "fileformat" },
                     },

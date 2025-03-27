@@ -106,6 +106,7 @@ return {
                         },
                         treesitter = { "lsp" },
                     },
+                    auto_show = true,
                 },
                 ghost_text = { enabled = true },
             },
@@ -113,5 +114,5 @@ return {
             signature = { enabled = true },
         },
         opts_extend = { "sources.default" }
-    }
+    },
 }
