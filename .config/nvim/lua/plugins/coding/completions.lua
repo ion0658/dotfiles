@@ -64,7 +64,7 @@ return {
             -- Default list of enabled providers defined so that you can extend it
             -- elsewhere in your config, without redefining it, due to `opts_extend`
             sources = {
-                default = { 'lsp', 'path', 'snippets', 'buffer', 'copilot' },
+                default = { 'lsp', 'path', 'snippets', 'buffer', 'copilot', 'cmdline', 'omni' },
                 providers = {
                     copilot = {
                         name = "copilot",
@@ -83,7 +83,13 @@ return {
                     },
                     buffer = {
                         score_offset = 60,
-                    }
+                    },
+                    omni = {
+                        score_offset = 50,
+                    },
+                    cmdline = {
+                        score_offset = 40,
+                    },
                 }
             },
 
