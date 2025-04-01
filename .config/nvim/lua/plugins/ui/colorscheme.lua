@@ -2,7 +2,7 @@ return {
     {
         "sainnhe/sonokai",
         version = "*",
-        enabled = true,
+        enabled = false,
         priority = 8000, -- Very high priority is required
         config = function()
             vim.g.sonokai_enable_italic = true
@@ -12,4 +12,19 @@ return {
             vim.cmd.colorscheme("sonokai")
         end
     },
+    {
+        "folke/tokyonight.nvim",
+        version = "*",
+        enabled = true,
+        lazy = false,
+        priority = 8000,
+        opts = {
+            style = "night",
+            transparent = true,
+        },
+        config = function(_, opts)
+            require("tokyonight").setup(opts)
+            vim.cmd.colorscheme("tokyonight")
+        end
+    }
 }
