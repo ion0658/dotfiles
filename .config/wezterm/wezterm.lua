@@ -24,11 +24,13 @@ config.use_ime = true
 config.enable_scroll_bar = true
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
+config.max_fps = 240
+
 
 -- start with window maximized
 wezterm.on('gui-startup', function(cmd)
     local _tab, _pane, window = wezterm.mux.spawn_window(cmd or {})
-    window:gui_window():maximize()
+    window:gui_window():toggle_fullscreen()
 end)
 
 -- keybindings
