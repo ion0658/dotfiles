@@ -34,4 +34,3 @@ style_root = "black bold"
 format = "[$user🌱]($style) "
 disabled = false
 show_always = true
-

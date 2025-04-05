@@ -118,10 +118,13 @@ if wezterm.target_triple:find("msvc") then
             label = "cmd",
             args = { "cmd.exe" },
         },
+        {
+            label = "NuShell",
+            args = { "nu.exe" },
+        },
     }
-    config.default_prog = { "pwsh.exe", "-NoLogo" }
+    config.default_prog = { "nu" }
 end
 
 config.launch_menu = launch_menu
 return config
-

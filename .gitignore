@@ -8,4 +8,4 @@
 !.config/starship.toml
 !.config/wezterm
 !.config/lazygit
-
+!.config/nushell
