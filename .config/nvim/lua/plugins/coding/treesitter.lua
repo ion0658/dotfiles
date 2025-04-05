@@ -1,13 +1,14 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        version     = "*",
-        lazy        = true,
-        build       = ":TSUpdate",
-        event       = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
-        cmd         = { "TSUpdateSync", "TSUpdate", "TSInstall" },
-        opts_extend = { "ensure_installed" },
-        opts        = {
+        version      = "*",
+        lazy         = true,
+        dependencies = { "nushell/tree-sitter-nu" },
+        build        = ":TSUpdate",
+        event        = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
+        cmd          = { "TSUpdateSync", "TSUpdate", "TSInstall" },
+        opts_extend  = { "ensure_installed" },
+        opts         = {
             highlight = { enable = true },
             indent = { enable = true },
             autotag = { enable = true },
@@ -41,7 +42,7 @@ return {
                 }
             },
         },
-        config      = function(_, opts)
+        config       = function(_, opts)
             require("nvim-treesitter.configs").setup(opts)
         end
     },
@@ -56,5 +57,10 @@ return {
         version = "*",
         lazy    = true,
         event   = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
-    }
+    },
+    {
+        "nushell/tree-sitter-nu",
+        lazy = true,
+        enabled = false,
+    },
 }
