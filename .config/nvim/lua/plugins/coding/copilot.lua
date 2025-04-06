@@ -26,4 +26,9 @@ return {
         event = { "InsertEnter" },
         opts = {}
     },
+    {
+        'AndreM222/copilot-lualine',
+        version = "*",
+        lazy = true,
+    }
 }
