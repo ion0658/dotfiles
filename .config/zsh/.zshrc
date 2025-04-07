@@ -190,3 +190,8 @@ if [ ! -f $XDG_CONFIG_HOME/zsh/.zshrc.zwc -o $XDG_CONFIG_HOME/zsh/.zshrc -nt $XD
     rm -rf $XDG_CONFIG_HOME/zsh/.zcompdump
     zcompile $XDG_CONFIG_HOME/zsh/.zshrc
 fi
+
+
+if command -v nu &> /dev/null ; then
+    nu ;exit 0
+fi
