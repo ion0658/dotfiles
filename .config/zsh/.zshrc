@@ -111,6 +111,8 @@ alias -g G='| grep'
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 [ -s $CARGO_HOME/env ] && . "$CARGO_HOME/env"
 
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+
 # volta
 export VOLTA_HOME="$XDG_DATA_HOME/volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
