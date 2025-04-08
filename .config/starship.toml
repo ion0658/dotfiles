@@ -4,6 +4,7 @@
 # シェルのプロンプトの間に空行を挿入する
 add_newline = true
 
+format = "$username$directory$all$time$cmd_duration$line_break$character"
 
 [character]
 error_symbol = "[❯](bold red)"
@@ -27,6 +28,10 @@ style = "bold blue"
 [docker_context]
 format = "via [🐋 $context]($style) "
 style = "bold blue"
+
+[time]
+disabled = false
+format = "[$time]($style) "
 
 [username]
 style_user = "white bold"
