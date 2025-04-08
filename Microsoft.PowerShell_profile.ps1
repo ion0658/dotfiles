@@ -18,6 +18,10 @@ $Env:NUGET_PACKAGES = "$Env:XDG_CACHE_HOME\nuget"
 $Env:PYENV_ROOT = "$Env:XDG_DATA_HOME\.venv"
 $Env:PYENV_BIN = "$Env:PYENV_ROOT\Scripts"
 
+$Env:PATH = "$env:CARGO_HOME\\bin;" + $Env:PATH
+$Env:PATH = "$env:VOLTA_HOME\\bin;" + $Env:PATH
+$Env:PATH = "$env:GOPATH\\bin;" + $Env:PATH
+
 if(Check-Command -cmdname "starship") {
     Invoke-Expression (&starship init powershell)
 }
