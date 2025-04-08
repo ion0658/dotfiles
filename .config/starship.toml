@@ -4,7 +4,7 @@
 # シェルのプロンプトの間に空行を挿入する
 add_newline = true
 
-format = "$username$directory$all$time$cmd_duration$line_break$character"
+format = "$username$shell$directory$all$time$cmd_duration$line_break$character"
 
 [character]
 error_symbol = "[❯](bold red)"
@@ -39,3 +39,8 @@ style_root = "black bold"
 format = "[$user🌱]($style) "
 disabled = false
 show_always = true
+
+[shell]
+disabled = false
+format = '[with $indicator]($style) '
+style = "white bold"
