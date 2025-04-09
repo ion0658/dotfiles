@@ -24,7 +24,6 @@ return {
         dependencies = {
             { 'rafamadriz/friendly-snippets', lazy = true },
             { 'saghen/blink.compat',          lazy = true },
-            { 'hrsh7th/nvim-cmp',             lazy = true }
         },
 
         -- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
@@ -56,7 +55,7 @@ return {
                 -- Sets the fallback highlight groups to nvim-cmp's highlight groups
                 -- Useful for when your theme doesn't support blink.cmp
                 -- Will be removed in a future release
-                use_nvim_cmp_as_default = true,
+                use_nvim_cmp_as_default = false,
                 -- Set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
                 -- Adjusts spacing to ensure icons are aligned
                 nerd_font_variant = 'mono'
@@ -115,7 +114,7 @@ return {
                     },
                     auto_show = true,
                 },
-                ghost_text = { enabled = false },
+                ghost_text = { enabled = true },
             },
             cmdline = { enabled = true },
             signature = { enabled = true },
