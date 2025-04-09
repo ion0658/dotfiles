@@ -35,6 +35,7 @@ $env.STARSHIP_CACHE = ($env.XDG_CACHE_HOME | path join 'starship')
 path add ($env.CARGO_HOME | path join 'bin')
 path add ($env.VOLTA_HOME | path join 'bin')
 path add ($env.GOPATH | path join 'bin')
+path add ($env.XDG_DATA_HOME | path join '..' | path join 'bin')
 
 $env.config.shell_integration = {
     osc2: false
