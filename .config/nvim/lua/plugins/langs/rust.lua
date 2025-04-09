@@ -38,19 +38,4 @@ return {
             },
         },
     },
-    {
-        "cordx56/rustowl",
-        version = "*",
-        lazy = true,
-        dependencies = { "neovim/nvim-lspconfig", lazy = true },
-        event = { 'BufReadPost *.rs', 'BufWritePost *.rs', 'BufNewFile *.rs' },
-        config = function()
-            local lspconfig = require("lspconfig")
-            lspconfig.rustowl.setup({
-                trigger = {
-                    hover = true,
-                },
-            })
-        end,
-    }
 }
