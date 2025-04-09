@@ -31,6 +31,7 @@ $env.PYENV_ROOT = ($env.XDG_DATA_HOME | path join '.venv')
 $env.PYENV_BIN = ($env.PYENV_ROOT | path join 'Scripts')
 $env.STARSHIP_CONFIG = ($env.XDG_CONFIG_HOME | path join 'starship.toml')
 $env.STARSHIP_CACHE = ($env.XDG_CACHE_HOME | path join 'starship')
+$env._ZO_DATA_DIR = ($env.XDG_CACHE_HOME | path join 'zoxide')
 
 path add ($env.CARGO_HOME | path join 'bin')
 path add ($env.VOLTA_HOME | path join 'bin')
