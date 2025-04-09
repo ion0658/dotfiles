@@ -23,7 +23,8 @@ return {
         -- optional: provides snippets for the snippet source
         dependencies = {
             { 'rafamadriz/friendly-snippets', lazy = true },
-            { 'saghen/blink.compat',          lazy = true }
+            { 'saghen/blink.compat',          lazy = true },
+            { 'hrsh7th/nvim-cmp',             lazy = true }
         },
 
         -- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
@@ -114,7 +115,7 @@ return {
                     },
                     auto_show = true,
                 },
-                ghost_text = { enabled = true },
+                ghost_text = { enabled = false },
             },
             cmdline = { enabled = true },
             signature = { enabled = true },
