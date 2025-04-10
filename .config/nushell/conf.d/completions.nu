@@ -1,5 +1,4 @@
 source completions/cargo_completions.nu
-source completions/cargo_make_completions.nu
 source completions/curl_completions.nu
 source completions/eza_completions.nu
 source completions/gh_completions.nu
