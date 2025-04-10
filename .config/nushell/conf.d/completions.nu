@@ -5,7 +5,7 @@ source completions/cargo_make_completions.nu
 source completions/curl_completions.nu
 source completions/eza_completions.nu
 source completions/gh_completions.nu
-source completions/git_completions.nu
+# source completions/git_completions.nu
 source completions/npm_completions.nu
 source completions/pnpm_completions.nu
 source completions/rg_completions.nu
