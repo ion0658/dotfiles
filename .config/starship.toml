@@ -3,6 +3,8 @@
 
 # シェルのプロンプトの間に空行を挿入する
 add_newline = true
+command_timeout = 3600000
+scan_timeout = 500
 
 format = "$username$shell$directory$all$time$cmd_duration$line_break$character"
 
