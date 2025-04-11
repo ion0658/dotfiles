@@ -17,7 +17,8 @@ return {
         lazy         = true,
         event        = { "VeryLazy", 'BufReadPre', 'BufWritePre', 'BufNewFile' },
         dependencies = {
-            { 'rcarriga/nvim-notify', lazy = true }
+            { 'rcarriga/nvim-notify', lazy = true },
+            { 'saghen/blink.cmp',     lazy = true },
         },
         opts_extend  = { "ensure_installed" },
         opts         = {
@@ -56,6 +57,26 @@ return {
                             filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" }
                         }
                     end
+                    if server_name == "rust_analyzer" then
+                        server_config = {
+                            cachePriming = {
+                                enable = false
+                            }
+
+                        }
+                    end
+                    if server_name == "lua_ls" then
+                        server_config = {
+                            settings = {
+                                Lua = {
+                                    diagnostics = {
+                                        globals = { "vim" },
+                                    },
+                                },
+                            },
+                        }
+                    end
+                    server_config.capabilities = require('blink.cmp').get_lsp_capabilities(server_config.capabilities)
                     require("lspconfig")[server_name].setup(server_config)
                 end
             }
