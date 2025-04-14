@@ -25,9 +25,11 @@ return {
             ensure_installed = {},
         },
         config       = function(_, opts)
-            local p = require("mason-lspconfig")
-            p.setup(opts)
-            p.setup_handlers {
+            local lspconfig = require("lspconfig")
+            local blink = require("blink.cmp")
+            local mason_config = require("mason-lspconfig")
+            mason_config.setup(opts)
+            mason_config.setup_handlers {
                 function(server_name)
                     local server_config = {}
 
@@ -76,8 +78,8 @@ return {
                             },
                         }
                     end
-                    server_config.capabilities = require('blink.cmp').get_lsp_capabilities(server_config.capabilities)
-                    require("lspconfig")[server_name].setup(server_config)
+                    server_config.capabilities = blink.get_lsp_capabilities(server_config.capabilities)
+                    lspconfig[server_name].setup(server_config)
                 end
             }
         end,
