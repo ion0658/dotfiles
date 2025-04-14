@@ -18,68 +18,22 @@ return {
         event        = { "VeryLazy", 'BufReadPre', 'BufWritePre', 'BufNewFile' },
         dependencies = {
             { 'rcarriga/nvim-notify', lazy = true },
-            { 'saghen/blink.cmp',     lazy = true },
+            { 'saghen/blink.cmp',     lazy = true }
         },
         opts_extend  = { "ensure_installed" },
         opts         = {
             ensure_installed = {},
         },
         config       = function(_, opts)
-            local lspconfig = require("lspconfig")
             local blink = require("blink.cmp")
             local mason_config = require("mason-lspconfig")
             mason_config.setup(opts)
             mason_config.setup_handlers {
                 function(server_name)
-                    local server_config = {}
-
-                    if server_name == "volar" then
-                        server_config = {
-                            filetypes = { "vue" },
-                            init_options = {
-                                vue = {
-                                    hybridMode = false
-                                },
-                            }
-                        }
-                    end
-                    if server_name == "ts_ls" then
-                        local mason_packages = vim.fn.stdpath("data") .. "/mason/packages"
-                        local volar_path = mason_packages .. "/vue-language-server/node_modules/@vue/language-server"
-                        server_config = {
-                            init_options = {
-                                plugins = {
-                                    {
-                                        name = "@vue/typescript-plugin",
-                                        location = volar_path,
-                                        languages = { "vue" },
-                                    },
-                                },
-                            },
-                            filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" }
-                        }
-                    end
-                    if server_name == "rust_analyzer" then
-                        server_config = {
-                            cachePriming = {
-                                enable = false
-                            }
-
-                        }
-                    end
-                    if server_name == "lua_ls" then
-                        server_config = {
-                            settings = {
-                                Lua = {
-                                    diagnostics = {
-                                        globals = { "vim" },
-                                    },
-                                },
-                            },
-                        }
-                    end
-                    server_config.capabilities = blink.get_lsp_capabilities(server_config.capabilities)
-                    lspconfig[server_name].setup(server_config)
+                    local config = {}
+                    config.capabilities = blink.get_lsp_capabilities(config.capabilities)
+                    vim.lsp.config(server_name, config)
+                    vim.lsp.enable(server_name)
                 end
             }
         end,
