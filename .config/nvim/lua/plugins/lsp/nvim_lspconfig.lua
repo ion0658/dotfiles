@@ -24,7 +24,7 @@ return {
                     rust_analyzer = {
                         settings = {
                             cachePriming = {
-                                enable = false
+                                enable = true
                             }
                         },
                     },
