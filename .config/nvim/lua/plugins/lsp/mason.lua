@@ -25,17 +25,9 @@ return {
             ensure_installed = {},
         },
         config       = function(_, opts)
-            local blink = require("blink.cmp")
             local mason_config = require("mason-lspconfig")
             mason_config.setup(opts)
-            mason_config.setup_handlers {
-                function(server_name)
-                    local config = {}
-                    config.capabilities = blink.get_lsp_capabilities(config.capabilities)
-                    vim.lsp.config(server_name, config)
-                    vim.lsp.enable(server_name)
-                end
-            }
+            vim.lsp.enable(mason_config.get_installed_servers())
         end,
     },
 }
