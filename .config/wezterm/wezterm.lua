@@ -24,8 +24,8 @@ config.use_ime = true
 config.enable_scroll_bar = true
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
-config.max_fps = 240
-
+config.max_fps = 120
+config.animation_fps = 120
 
 -- start with window maximized
 wezterm.on('gui-startup', function(cmd)
