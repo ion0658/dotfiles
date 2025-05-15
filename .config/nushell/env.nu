@@ -21,6 +21,7 @@ use std/util "path add"
 
 $env.CARGO_HOME = ($env.XDG_DATA_HOME | path join 'cargo')
 $env.RUSTUP_HOME = ($env.XDG_DATA_HOME | path join 'rustup')
+$env.RUST_BACKTRACE = 1
 $env.VOLTA_HOME = ($env.XDG_DATA_HOME | path join 'volta')
 $env.SCCACHE_DIR = ($env.XDG_CACHE_HOME | path join 'sccache')
 $env.DISCORD_USER_DATA_DIR = ($env.XDG_CONFIG_HOME | path join 'discord')
