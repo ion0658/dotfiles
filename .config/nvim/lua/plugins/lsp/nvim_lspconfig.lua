@@ -21,13 +21,6 @@ return {
                             },
                         },
                     },
-                    rust_analyzer = {
-                        settings = {
-                            cachePriming = {
-                                enable = true
-                            }
-                        },
-                    },
                     volar = {
                         filetypes = { "vue" },
                         init_options = {
