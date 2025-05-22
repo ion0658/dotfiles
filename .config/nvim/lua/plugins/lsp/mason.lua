@@ -1,6 +1,6 @@
 return {
     {
-        "williamboman/mason.nvim",
+        "mason-org/mason.nvim",
         version      = "*",
         lazy         = true,
         cmd          = "Mason",
@@ -12,7 +12,7 @@ return {
         }
     },
     {
-        "williamboman/mason-lspconfig.nvim",
+        "mason-org/mason-lspconfig.nvim",
         version      = "*",
         lazy         = true,
         event        = { "VeryLazy", 'BufReadPre', 'BufWritePre', 'BufNewFile' },

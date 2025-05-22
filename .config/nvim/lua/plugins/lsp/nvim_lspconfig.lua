@@ -21,7 +21,7 @@ return {
                             },
                         },
                     },
-                    volar = {
+                    vue_ls = {
                         filetypes = { "vue" },
                         init_options = {
                             vue = {
