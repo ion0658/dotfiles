@@ -2,7 +2,7 @@ local ensure_installed = {
     -- web
     "ts_ls",
     -- "biome",
-    "volar",
+    "vue_ls",
     "tailwindcss",
 }
 
