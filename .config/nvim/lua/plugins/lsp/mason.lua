@@ -1,5 +1,10 @@
 return {
     {
+        "mason-org/mason-registry",
+        version = "*",
+        lazy    = true,
+    },
+    {
         "mason-org/mason.nvim",
         version      = "*",
         lazy         = true,
@@ -8,7 +13,8 @@ return {
         build        = ":MasonUpdate",
         config       = true,
         dependencies = {
-            { 'rcarriga/nvim-notify', lazy = true }
+            { 'rcarriga/nvim-notify',     lazy = true },
+            { 'mason-org/mason-registry', lazy = true },
         }
     },
     {
