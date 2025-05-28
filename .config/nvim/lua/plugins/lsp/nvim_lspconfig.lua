@@ -21,6 +21,16 @@ return {
                             },
                         },
                     },
+                    clangd = {
+                        capabilities = {
+                            offsetEncoding = { 'utf-16', 'utf-8' },
+                            textDocument = {
+                                semanticTokens = {
+                                    multilineTokenSupport = true,
+                                },
+                            }
+                        }
+                    },
                     vue_ls = {
                         filetypes = { "vue" },
                         init_options = {
