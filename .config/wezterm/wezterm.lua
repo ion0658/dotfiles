@@ -117,6 +117,14 @@ if wezterm.target_triple:find("msvc") then
             args = { "pwsh.exe", "-NoLogo" },
         },
         {
+            label = "PowerShell Dev",
+            args = {
+                "pwsh.exe",
+                "-NoLogo",
+                "-Command",
+                "&{Import-Module \"D:\\App\\Microsoft\\VisualStudio\\IDE\\2022\\Common7\\Tools\\Microsoft.VisualStudio.DevShell.dll\"; Enter-VsDevShell cebaa760 -SkipAutomaticLocation -DevCmdArguments \"-arch=x64 -host_arch=x64\"} && nu" },
+        },
+        {
             label = "cmd",
             args = { "cmd.exe" },
         },
