@@ -1,5 +1,7 @@
 local ensure_installed = {
     "clangd",
+    "clang-format",
+    "cmake-language-server",
 }
 
 return {
