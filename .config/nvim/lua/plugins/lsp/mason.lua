@@ -33,7 +33,6 @@ return {
         config       = function(_, opts)
             local mason_config = require("mason-lspconfig")
             mason_config.setup(opts)
-            vim.lsp.enable(mason_config.get_installed_servers())
         end,
     },
 }

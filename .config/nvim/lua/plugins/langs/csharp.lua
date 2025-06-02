@@ -1,5 +1,5 @@
 local ensure_installed = {
-    -- "omnisharp",
+    "omnisharp",
 }
 return {
     {

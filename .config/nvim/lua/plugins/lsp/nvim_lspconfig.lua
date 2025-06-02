@@ -20,6 +20,7 @@ return {
                                 },
                             },
                         },
+                        filetypes = { "lua" },
                     },
                     clangd = {
                         capabilities = {
@@ -29,7 +30,8 @@ return {
                                     multilineTokenSupport = true,
                                 },
                             }
-                        }
+                        },
+                        filetypes = { "c", "cpp", "objc", "objcpp" },
                     },
                     vue_ls = {
                         filetypes = { "vue" },
@@ -50,7 +52,10 @@ return {
                             },
                         },
                         filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" }
-                    }
+                    },
+                    omnisharp = {
+                        filetypes = { "cs" },
+                    },
                 }
             }
             return opts
