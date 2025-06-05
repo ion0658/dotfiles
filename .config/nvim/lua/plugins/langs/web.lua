@@ -1,11 +1,3 @@
-local ensure_installed = {
-    -- web
-    "ts_ls",
-    -- "biome",
-    "vue_ls",
-    "tailwindcss",
-}
-
 return {
     {
         "nvim-treesitter/nvim-treesitter",
@@ -23,7 +15,13 @@ return {
     {
         "williamboman/mason-lspconfig.nvim",
         opts = {
-            ensure_installed = ensure_installed
+            ensure_installed =  {
+                -- web
+                "ts_ls",
+                -- "biome",
+                "vue_ls",
+                "tailwindcss",
+            }
         },
     },
     {

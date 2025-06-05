@@ -30,9 +30,6 @@ return {
         opts         = {
             ensure_installed = {},
         },
-        config       = function(_, opts)
-            local mason_config = require("mason-lspconfig")
-            mason_config.setup(opts)
-        end,
+        config       = true
     },
 }

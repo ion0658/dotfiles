@@ -1,9 +1,3 @@
-local ensure_installed = {
-    "clangd",
-    "clang-format",
-    "cmake-language-server",
-}
-
 return {
     {
         "nvim-treesitter/nvim-treesitter",
@@ -18,17 +12,22 @@ return {
     {
         "williamboman/mason-lspconfig.nvim",
         opts = {
-            ensure_installed = ensure_installed
+            ensure_installed = {
+                "clangd",
+            }
         },
     },
     {
         "jay-babu/mason-null-ls.nvim",
+        opts = {
+            ensure_installed = {
+                "clang-format",
+                "cmake-language-server"
+            }
+        }
     },
     {
         "jay-babu/mason-nvim-dap.nvim",
-        opts = {
-            ensure_installed = ensure_installed
-        },
     },
     {
         "p00f/clangd_extensions.nvim",

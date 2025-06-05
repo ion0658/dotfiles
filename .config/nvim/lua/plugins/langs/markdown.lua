@@ -1,9 +1,3 @@
-local ensure_installed = {
-    -- markdown
-    "marksman",
-}
-
-
 return {
     {
         "nvim-treesitter/nvim-treesitter",
@@ -17,7 +11,7 @@ return {
     {
         "williamboman/mason-lspconfig.nvim",
         opts = {
-            ensure_installed = ensure_installed
+            ensure_installed = {"marksman"}
         },
     },
     {
@@ -25,9 +19,6 @@ return {
     },
     {
         "jay-babu/mason-nvim-dap.nvim",
-        opts = {
-            ensure_installed = ensure_installed
-        },
     },
     {
         "toppair/peek.nvim",

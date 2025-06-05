@@ -1,7 +1,3 @@
-local ensure_installed = {
-    "rust_analyzer",
-}
-
 return {
     {
         "nvim-treesitter/nvim-treesitter",
@@ -15,7 +11,7 @@ return {
     {
         "williamboman/mason-lspconfig.nvim",
         opts = {
-            ensure_installed = ensure_installed
+            ensure_installed = { "rust_analyzer" }
         },
     },
     {
@@ -23,9 +19,6 @@ return {
     },
     {
         "jay-babu/mason-nvim-dap.nvim",
-        opts = {
-            ensure_installed = ensure_installed
-        },
     },
     {
         "Saecki/crates.nvim",

@@ -1,6 +1,3 @@
-local ensure_installed = {
-}
-
 return {
     {
         "nvim-treesitter/nvim-treesitter",

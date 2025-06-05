@@ -1,10 +1,3 @@
-local ensure_installed = {
-    "bashls",
-    "lua_ls",
-    "autotools_ls",
-    "vimls",
-}
-
 return {
     {
         "nvim-treesitter/nvim-treesitter",
@@ -26,7 +19,12 @@ return {
     {
         "williamboman/mason-lspconfig.nvim",
         opts = {
-            ensure_installed = ensure_installed
+            ensure_installed = {
+                "bashls",
+                "lua_ls",
+                "autotools_ls",
+                "vimls",
+            }
         },
     },
     {
@@ -34,8 +32,5 @@ return {
     },
     {
         "jay-babu/mason-nvim-dap.nvim",
-        opts = {
-            ensure_installed = ensure_installed
-        },
     }
 }

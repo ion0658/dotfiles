@@ -53,7 +53,7 @@ return {
                         },
                         filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" }
                     },
-                    omnisharp = {
+                    csharp_language_server = {
                         filetypes = { "cs" },
                     },
                 }
