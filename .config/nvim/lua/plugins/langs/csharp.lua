@@ -1,5 +1,5 @@
 local ensure_installed = {
-    "omnisharp",
+    "csharp_language_server",
 }
 return {
     {
