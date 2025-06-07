@@ -31,7 +31,6 @@ return {
                                 },
                             }
                         },
-                        filetypes = { "c", "cpp", "objc", "objcpp" },
                     },
                     vue_ls = {
                         filetypes = { "vue" },
