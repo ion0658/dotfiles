@@ -29,8 +29,12 @@ return {
                                 semanticTokens = {
                                     multilineTokenSupport = true,
                                 },
-                            }
+                            },
                         },
+                        init_options = {
+                            fallbackFlags = { "-std=c++20" },
+                        },
+                        cmd = { "clangd", "--background-index", "--clang-tidy", "--experimental-modules-support" },
                     },
                     vue_ls = {
                         filetypes = { "vue" },
