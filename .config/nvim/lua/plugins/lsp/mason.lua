@@ -23,8 +23,10 @@ return {
         lazy         = true,
         event        = { "VeryLazy", 'BufReadPre', 'BufWritePre', 'BufNewFile' },
         dependencies = {
-            { 'rcarriga/nvim-notify', lazy = true },
-            { 'saghen/blink.cmp',     lazy = true }
+            { 'rcarriga/nvim-notify',     lazy = true },
+            { 'saghen/blink.cmp',         lazy = true },
+            { 'mason-org/mason.nvim',     lazy = true },
+            { 'mason-org/mason-registry', lazy = true },
         },
         opts_extend  = { "ensure_installed" },
         opts         = {
