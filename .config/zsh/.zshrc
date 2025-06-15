@@ -178,11 +178,8 @@ fi
 
 # pyenv
 export PYENV_ROOT="$XDG_CACHE_HOME/.venv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-if command -v pyenv &> /dev/null ; then
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-    export PYENV_BIN="$PYENV_ROOT/versions/neovim3/bin"
+if command -v python3 &> /dev/null ; then
+    export PYENV_BIN="$PYENV_ROOT/neovim/bin"
 fi
 
 #.zshrc自動コンパイル
