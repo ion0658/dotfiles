@@ -29,7 +29,14 @@ return {
             { "<leader>ds", function() require("dap").session() end,                                              desc = "Session" },
             { "<leader>dt", function() require("dap").terminate() end,                                            desc = "Terminate" },
             { "<leader>dw", function() require("dap.ui.widgets").hover() end,                                     desc = "Widgets" },
-        }
+        },
+        config = function(_, opts)
+            local vscode = require("dap.ext.vscode")
+            local json = require("plenary.json")
+            vscode.json_decode = function(str)
+                return vim.json.decode(json.json_strip_comments(str))
+            end
+        end
     },
     {
         "jay-babu/mason-nvim-dap.nvim",
