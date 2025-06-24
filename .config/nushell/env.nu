@@ -28,8 +28,7 @@ $env.DISCORD_USER_DATA_DIR = ($env.XDG_CONFIG_HOME | path join 'discord')
 $env.GOPATH = ($env.XDG_DATA_HOME | path join '/go')
 $env.NPM_CONFIG_USERCONFIG = ($env.XDG_CONFIG_HOME | path join 'npm/npmrc')
 $env.NUGET_PACKAGES = ($env.XDG_CACHE_HOME | path join 'nuget')
-$env.PYENV_ROOT = ($env.XDG_CACHE_HOME | path join '.venv/env_nu')
-$env.PYENV_BIN = ($env.PYENV_ROOT | path join 'bin')
+$env.PYENV_ROOT = ($env.XDG_CACHE_HOME | path join '.venv')
 $env.STARSHIP_CONFIG = ($env.XDG_CONFIG_HOME | path join 'starship.toml')
 $env.STARSHIP_CACHE = ($env.XDG_CACHE_HOME | path join 'starship')
 $env._ZO_DATA_DIR = ($env.XDG_CACHE_HOME | path join 'zoxide')
@@ -55,4 +54,12 @@ $env.config.history = {
     max_size: 1_000_000
     sync_on_enter: true
     isolation: true
+}
+
+let host_os = sys host | get name | str upcase
+let is_windows = $host_os == "WINDOWS"
+if $is_windows {
+    $env.PYENV_BIN = ($env.PYENV_ROOT | path join 'Scripts')
+} else {
+    $env.PYENV_BIN = ($env.PYENV_ROOT | path join 'bin')
 }
