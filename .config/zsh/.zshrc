@@ -178,7 +178,8 @@ fi
 
 # pyenv
 export PYENV_ROOT="$XDG_CACHE_HOME/.venv"
-if command -v python3 &> /dev/null ; then
+if command -v pyenv &> /dev/null ; then
+    eval "$(pyenv init - nu)"
     export PYENV_BIN="$PYENV_ROOT/neovim/bin"
 fi
 
@@ -187,7 +188,6 @@ if [ ! -f $XDG_CONFIG_HOME/zsh/.zshrc.zwc -o $XDG_CONFIG_HOME/zsh/.zshrc -nt $XD
     rm -rf $XDG_CONFIG_HOME/zsh/.zcompdump
     zcompile $XDG_CONFIG_HOME/zsh/.zshrc
 fi
-
 
 if command -v nu &> /dev/null ; then
     nu ;exit 0

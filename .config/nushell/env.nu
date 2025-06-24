@@ -29,6 +29,7 @@ $env.GOPATH = ($env.XDG_DATA_HOME | path join '/go')
 $env.NPM_CONFIG_USERCONFIG = ($env.XDG_CONFIG_HOME | path join 'npm/npmrc')
 $env.NUGET_PACKAGES = ($env.XDG_CACHE_HOME | path join 'nuget')
 $env.PYENV_ROOT = ($env.XDG_CACHE_HOME | path join '.venv')
+$env.UVENV_ROOT = ($env.XDG_CACHE_HOME | path join '.uvenv')
 $env.STARSHIP_CONFIG = ($env.XDG_CONFIG_HOME | path join 'starship.toml')
 $env.STARSHIP_CACHE = ($env.XDG_CACHE_HOME | path join 'starship')
 $env._ZO_DATA_DIR = ($env.XDG_CACHE_HOME | path join 'zoxide')
@@ -59,7 +60,7 @@ $env.config.history = {
 let host_os = sys host | get name | str upcase
 let is_windows = $host_os == "WINDOWS"
 if $is_windows {
-    $env.PYENV_BIN = ($env.PYENV_ROOT | path join 'Scripts')
+    $env.PY_BIN = ($env.UVENV_ROOT | path join 'Scripts')
 } else {
-    $env.PYENV_BIN = ($env.PYENV_ROOT | path join 'bin')
+    $env.PY_BIN = ($env.UVENV_ROOT | path join 'bin')
 }
