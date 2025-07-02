@@ -61,6 +61,8 @@ let host_os = sys host | get name | str upcase
 let is_windows = $host_os == "WINDOWS"
 if $is_windows {
     $env.PY_BIN = ($env.UVENV_ROOT | path join 'Scripts')
+    path add ($env.PYENV_ROOT | path join 'pyenv-win/bin')
+    path add ($env.PYENV_ROOT | path join 'pyenv-win/shims')
 } else {
     $env.PY_BIN = ($env.UVENV_ROOT | path join 'bin')
 }
