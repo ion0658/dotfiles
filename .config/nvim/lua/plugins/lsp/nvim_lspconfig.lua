@@ -59,6 +59,9 @@ return {
                     csharp_language_server = {
                         filetypes = { "cs" },
                     },
+                    qmlls = {
+                        filetypes = { "qml" },
+                    }
                 }
             }
             return opts
