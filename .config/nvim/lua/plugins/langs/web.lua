@@ -17,8 +17,8 @@ return {
         opts = {
             ensure_installed = {
                 -- web
-                -- "ts_ls",
-                "biome",
+                "ts_ls",
+                -- "biome",
                 "vue_ls",
                 "tailwindcss",
             }
