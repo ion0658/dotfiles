@@ -17,7 +17,7 @@ config.window_padding = {
 }
 -- ui settings
 config.font = wezterm.font_with_fallback({
-    "Cascadia Code NF",
+    "Moralerspace Neon HW"
 })
 config.font_size = 16.0
 config.use_ime = true
