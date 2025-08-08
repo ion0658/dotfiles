@@ -9,9 +9,9 @@ return {
         },
     },
     {
-        "williamboman/mason-lspconfig.nvim",
+        "mason-org/mason-lspconfig.nvim",
         opts = {
-            ensure_installed = {"marksman"}
+            ensure_installed = { "marksman" }
         },
     },
     {

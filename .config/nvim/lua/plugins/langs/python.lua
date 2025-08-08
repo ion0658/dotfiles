@@ -3,20 +3,25 @@ return {
         "nvim-treesitter/nvim-treesitter",
         opts = {
             ensure_installed = {
-                "c_sharp",
+                "python"
             }
-        }
+        },
     },
     {
         "mason-org/mason-lspconfig.nvim",
+        opts = {
+            ensure_installed = {
+                "pyright"
+            }
+        },
     },
     {
         "jay-babu/mason-null-ls.nvim",
         opts = {
             ensure_installed = {
-                "csharp_language_server"
+                "ruff",
             }
-        },
+        }
     },
     {
         "jay-babu/mason-nvim-dap.nvim",
