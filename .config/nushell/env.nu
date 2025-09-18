@@ -32,6 +32,8 @@ $env.PYENV_ROOT = ($env.XDG_DATA_HOME | path join '.venv' | path join 'pyenv')
 $env.UVENV_ROOT = ($env.XDG_DATA_HOME | path join '.venv' | path join 'v3')
 $env.STARSHIP_CONFIG = ($env.XDG_CONFIG_HOME | path join 'starship.toml')
 $env.STARSHIP_CACHE = ($env.XDG_CACHE_HOME | path join 'starship')
+$env.WEZTERM_CONFIG_DIR = ($env.XDG_CONFIG_HOME | path join 'wezterm')
+$env.WEZTERM_CONFIG_FILE = ($env.WEZTERM_CONFIG_DIR | path join 'wezterm.lua')
 $env._ZO_DATA_DIR = ($env.XDG_CACHE_HOME | path join 'zoxide')
 
 path add ($env.CARGO_HOME | path join 'bin')
