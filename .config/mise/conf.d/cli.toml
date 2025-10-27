@@ -1,0 +1,16 @@
+[tools]
+cargo-binstall = { version = "latest" }
+"cargo:cargo-update" = { version = "latest" }
+"cargo:cargo-machete" = { version = "latest" }
+"cargo:cargo-make" = { version = "latest" }
+"cargo:sccache" = { version = "latest" }
+"cargo:bat" = { version = "latest" }
+"cargo:bottom" = { version = "latest" }
+"cargo:eza" = { version = "latest" }
+"cargo:fd-find" = { version = "latest" }
+"cargo:ripgrep" = { version = "latest" }
+"cargo:starship" = { version = "latest" }
+"cargo:zoxide" = { version = "latest" }
+fastfetch = { version = "latest" }
+fzf = { version = "latest" }
+jq = { version = "latest" }

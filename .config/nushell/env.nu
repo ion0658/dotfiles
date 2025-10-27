@@ -39,7 +39,6 @@ $env._ZO_DATA_DIR = ($env.XDG_CACHE_HOME | path join 'zoxide')
 path add ($env.CARGO_HOME | path join 'bin')
 path add ($env.VOLTA_HOME | path join 'bin')
 path add ($env.GOPATH | path join 'bin')
-path add ($env.XDG_DATA_HOME | path join '..' | path join 'bin')
 path add '/opt/homebrew/bin'
 
 $env.config.shell_integration = {
@@ -68,3 +67,6 @@ if $is_windows {
 } else {
     $env.PY_BIN = ($env.UVENV_ROOT | path join 'bin')
 }
+
+let mise_path = $nu.default-config-dir | path join mise.nu
+^mise activate nu | save $mise_path --force

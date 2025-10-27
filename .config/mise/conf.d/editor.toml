@@ -1,0 +1,4 @@
+[tools]
+# neovim
+neovim = { version = "latest" }
+"pipx:pynvim" = { version = "latest" }

@@ -1,0 +1,10 @@
+[settings.node]
+
+[settings.npm]
+bun = true
+
+[tools]
+node = { version = "latest" }
+pnpm = { version = "latest" }
+bun = { version = "latest" }
+deno = { version = "latest" }

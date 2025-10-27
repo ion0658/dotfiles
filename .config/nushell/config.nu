@@ -18,3 +18,5 @@
 # them for future reference.
 
 source conf.d/index.nu
+
+use ($nu.default-config-dir | path join mise.nu)
