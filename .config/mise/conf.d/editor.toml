@@ -1,4 +1,10 @@
+[env]
+XCODES_DIRECTORY = "/Volumes/Applications/Xcode"
+
 [tools]
 # neovim
 neovim = { version = "latest" }
 "pipx:pynvim" = { version = "latest" }
+
+# xcode
+xcodes = { version = "latest", os = "macos" }

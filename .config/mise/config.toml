@@ -1,2 +1,5 @@
+[env]
+MISE_JOBS = "{{ num_cpus() }}"
+
 [settings]
 disable_backends = []

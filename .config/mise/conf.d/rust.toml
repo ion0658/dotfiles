@@ -1,2 +1,7 @@
+[env]
+RUST_BACKTRACE = "1"
+RUSTUP_HOME = "{{ [xdg_data_home] | concat(with='rustup') | join_path }}"
+CARGO_HOME = "{{ [xdg_data_home] | concat(with='cargo') | join_path }}"
+
 [tools]
 rust = { version = "latest", components = "llvm-tools" }

@@ -1,4 +1,13 @@
+[env]
+CARAPACE_BRIDGES = "zsh,fish,bash,inshellisense"
+SCCACHE_DIR = "{{ [xdg_cache_home] | concat(with='sccache') | join_path }}"
+STARSHIP_CONFIG = "{{ [xdg_config_home] | concat(with='starship.toml') | join_path }}"
+STARSHIP_CACHE = "{{ [xdg_cache_home] | concat(with='starship') | join_path }}"
+_ZO_DATA_DIR = "{{ [xdg_cache_home] | concat(with='zoxide') | join_path }}"
+
 [tools]
+aws-cli = { version = "latest" }
+carapace = { version = "latest" }
 cargo-binstall = { version = "latest" }
 "cargo:cargo-update" = { version = "latest" }
 "cargo:cargo-machete" = { version = "latest" }
@@ -8,9 +17,14 @@ cargo-binstall = { version = "latest" }
 "cargo:bottom" = { version = "latest" }
 "cargo:eza" = { version = "latest" }
 "cargo:fd-find" = { version = "latest" }
+"cargo:git-delta" = { version = "latest" }
+"cargo:headtail" = { version = "latest" }
 "cargo:ripgrep" = { version = "latest" }
 "cargo:starship" = { version = "latest" }
+"cargo:websocat" = { version = "latest" }
 "cargo:zoxide" = { version = "latest" }
+delta = { version = "latest" }
+"github:go-swagger/go-swagger" = { version = "latest" }
 fastfetch = { version = "latest" }
 fzf = { version = "latest" }
 jq = { version = "latest" }
