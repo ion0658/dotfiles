@@ -1,4 +1,8 @@
 [tools]
 git-lfs = { version = "latest" }
-github-cli = { version = "latest" }
 lazygit = { version = "latest" }
+
+# github
+github-cli = { version = "latest" }
+# gitlab
+"gitlab:gitlab-org/cli" = { version = "latest" }
