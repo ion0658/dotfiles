@@ -23,7 +23,6 @@ cargo-binstall = { version = "latest" }
 "cargo:starship" = { version = "latest" }
 "cargo:websocat" = { version = "latest" }
 "cargo:zoxide" = { version = "latest" }
-delta = { version = "latest" }
 "github:go-swagger/go-swagger" = { version = "latest" }
 fastfetch = { version = "latest" }
 fzf = { version = "latest" }
