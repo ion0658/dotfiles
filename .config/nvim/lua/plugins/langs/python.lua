@@ -11,17 +11,13 @@ return {
         "mason-org/mason-lspconfig.nvim",
         opts = {
             ensure_installed = {
-                "pyright"
+                "pyright",
+                "ruff",
             }
         },
     },
     {
         "jay-babu/mason-null-ls.nvim",
-        opts = {
-            ensure_installed = {
-                "ruff",
-            }
-        }
     },
     {
         "jay-babu/mason-nvim-dap.nvim",
