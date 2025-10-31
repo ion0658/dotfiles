@@ -5,5 +5,5 @@ uvx = true
 
 [tools]
 # python tools
-python = { version = "3" }
+python = { version = "3.13" }
 uv = { version = "latest" }
