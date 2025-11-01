@@ -13,7 +13,7 @@ return {
         },
         opts_extend  = { "ensure_installed" },
         opts         = {
-            ensure_installed = {},
+            ensure_installed = { "copilot-language-server" },
             automatic_installation = true,
         },
         config       = true

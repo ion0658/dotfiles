@@ -5,15 +5,6 @@ return {
         lazy = true,
     },
     {
-        'saghen/blink.compat',
-        -- use the latest release, via version = '*', if you also use the latest release for blink.cmp
-        version = '*',
-        -- lazy.nvim will automatically load the plugin when it's required by blink.cmp
-        lazy = true,
-        -- make sure to set opts so that lazy.nvim calls blink.compat's setup
-        opts = {},
-    },
-    {
         'saghen/blink.cmp',
         -- use a release tag to download pre-built binaries
         version = "*",
@@ -23,7 +14,7 @@ return {
         -- optional: provides snippets for the snippet source
         dependencies = {
             { 'rafamadriz/friendly-snippets', lazy = true },
-            { 'saghen/blink.compat',          lazy = true },
+            { "fang2hou/blink-copilot",       lazy = true },
         },
 
         -- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
@@ -68,7 +59,7 @@ return {
                 providers = {
                     copilot = {
                         name = "copilot",
-                        module = "blink.compat.source",
+                        module = "blink-copilot",
                         score_offset = 100,
                         async = true,
                     },
