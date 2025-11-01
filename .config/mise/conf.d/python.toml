@@ -1,9 +1,10 @@
 [settings.python]
 uv_venv_auto = true
+
 [settings.pipx]
 uvx = true
 
 [tools]
 # python tools
-python = { version = "3.13" }
+python = { version = "3" }
 uv = { version = "latest" }
