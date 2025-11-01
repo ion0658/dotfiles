@@ -22,7 +22,7 @@ return {
         opts = {
             ensure_installed = {
                 "clang-format",
-                "cmake-language-server"
+                "neocmakelsp"
             }
         }
     },
