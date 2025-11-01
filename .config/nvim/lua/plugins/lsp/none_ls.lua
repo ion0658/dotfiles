@@ -1,6 +1,6 @@
 return {
-    { "vim-test/vim-test",      version = "*", lazy = true,  config = true },
-    { "nvimtools/none-ls.nvim", version = "*", lazy = true,  config = true },
+    { "vim-test/vim-test",      version = "*", lazy = true, config = true },
+    { "nvimtools/none-ls.nvim", version = "*", lazy = true, config = true },
     {
         "jay-babu/mason-null-ls.nvim",
         version      = "*",

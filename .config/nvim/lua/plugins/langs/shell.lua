@@ -20,9 +20,7 @@ return {
         "mason-org/mason-lspconfig.nvim",
         opts = {
             ensure_installed = {
-                "bashls",
                 "lua_ls",
-                "autotools_ls",
                 "vimls",
             }
         },
