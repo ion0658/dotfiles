@@ -2,7 +2,7 @@ return {
     {
         "sainnhe/sonokai",
         version = "*",
-        enabled = false,
+        enabled = true,
         priority = 8000, -- Very high priority is required
         config = function()
             vim.g.sonokai_enable_italic = true
@@ -15,7 +15,7 @@ return {
     {
         "folke/tokyonight.nvim",
         version = "*",
-        enabled = true,
+        enabled = false,
         lazy = false,
         priority = 8000,
         opts = {
@@ -25,6 +25,21 @@ return {
         config = function(_, opts)
             require("tokyonight").setup(opts)
             vim.cmd.colorscheme("tokyonight")
+        end
+    },
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        enabled = false,
+        lazy = false,
+        priority = 8000,
+        opts = {
+            flavour = "mocha",
+            transparent_background = true,
+        },
+        config = function(_, opts)
+            require("catppuccin").setup(opts)
+            vim.cmd.colorscheme("catppuccin")
         end
     }
 }

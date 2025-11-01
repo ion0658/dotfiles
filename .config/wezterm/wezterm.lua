@@ -7,7 +7,7 @@ if wezterm.config_builder then
 end
 
 -- カラースキームの設定
-config.color_scheme = 'iceberg-dark'
+config.color_scheme = "Catppuccin Mocha"
 config.window_background_opacity = 0.9
 config.window_padding = {
     left = 20,
