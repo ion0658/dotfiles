@@ -1,8 +1,13 @@
 gui:
   nerdFontsVersion: "3"
 customCommands:
-  - key: "C"
+  - command: czg
     context: "files"
-    command: "git commit -v -t $XDG_CONFIG_HOME/lazygit/commit_template_with_prompt.txt"
+    key: "Z"
+    output: terminal
+
+  - command: "git commit -v -t $XDG_CONFIG_HOME/lazygit/commit_template_with_prompt.txt"
+    key: "C"
+    context: "files"
     description: "Commit changes using git editor"
     output: terminal
