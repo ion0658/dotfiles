@@ -1,3 +1,6 @@
+[env]
+GHQ_ROOT = "{{ [xdg_data_home] | concat(with='ghq') | join_path }}"
+
 [tools]
 git-lfs = { version = "latest" }
 lazygit = { version = "latest" }
