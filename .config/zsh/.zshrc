@@ -192,3 +192,4 @@ fi
 if command -v nu &> /dev/null ; then
     nu ;exit 0
 fi
+

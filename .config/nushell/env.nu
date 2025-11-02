@@ -42,3 +42,4 @@ $env.config.history = {
     sync_on_enter: true
     isolation: true
 }
+

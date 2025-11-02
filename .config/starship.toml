@@ -46,3 +46,4 @@ show_always = true
 disabled = false
 format = '[with $indicator]($style) '
 style = "white bold"
+

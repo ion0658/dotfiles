@@ -11,3 +11,4 @@ customCommands:
     context: "files"
     description: "Commit changes using git editor"
     output: terminal
+

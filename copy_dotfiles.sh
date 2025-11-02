@@ -7,5 +7,3 @@ case $config in
   * ) echo "not linked .config";;
 esac
 
-
-

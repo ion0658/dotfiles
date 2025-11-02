@@ -138,3 +138,4 @@ end
 
 config.launch_menu = launch_menu
 return config
+

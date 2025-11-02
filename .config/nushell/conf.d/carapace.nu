@@ -9,3 +9,4 @@ if not ($nu.data-dir | path join "vendor/autoload/carapace.nu" | path exists) {
         carapace _carapace nushell | save -f ($nu.data-dir | path join "vendor/autoload/carapace.nu")
     }
 }
+

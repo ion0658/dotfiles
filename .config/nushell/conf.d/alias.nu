@@ -12,3 +12,4 @@ alias open = ^open
 
 alias nu-zip = zip
 alias zip = ^zip
+

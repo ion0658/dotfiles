@@ -9,3 +9,4 @@ if not ($nu.data-dir | path join "vendor/autoload/zoxide.nu" | path exists) {
         zoxide init nushell | save -f ($nu.data-dir | path join "vendor/autoload/zoxide.nu")
     }
 }
+

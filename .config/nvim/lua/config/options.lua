@@ -21,7 +21,7 @@ vim.opt.pumblend = 10
 -- disable perl provider
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
-vim.g.loaded_node_provider = 0
+-- vim.g.loaded_node_provider = 0
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
     border = "rounded",
@@ -54,3 +54,4 @@ vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "WinEnter" }, {
         vim.opt.scrolloff = math.floor(vim.o.lines * 0.2)
     end,
 })
+

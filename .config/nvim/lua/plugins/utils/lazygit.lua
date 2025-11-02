@@ -15,3 +15,4 @@ return {
         { "<leader>gg", "<CMD>LazyGit<CR>", desc = "LazyGit" }
     }
 }
+

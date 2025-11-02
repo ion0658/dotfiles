@@ -8,3 +8,4 @@ neovim = { version = "latest" }
 
 # xcode
 xcodes = { version = "latest", os = ["macos"] }
+
