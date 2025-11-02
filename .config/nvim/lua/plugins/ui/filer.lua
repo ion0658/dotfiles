@@ -1,16 +1,15 @@
 return {
     {
-        "MunifTanjim/nui.nvim",
-        version = "*",
-        lazy = true,
-    },
-    {
         "nvim-neo-tree/neo-tree.nvim",
         version = "*",
-        lazy = true,
+        enabled = true,
         branch = "v3.x",
         cmd = "Neotree",
-        events = { "VeryLazy" },
+        dependencies = {
+            { "MunifTanjim/nui.nvim",        lazy = true },
+            { "nvim-lua/plenary.nvim",       lazy = true },
+            { "nvim-tree/nvim-web-devicons", lazy = true },
+        },
         keys = {
             {
                 "<leader>fe",

@@ -81,8 +81,6 @@ return {
     {
         'rmagatti/auto-session',
         version = "*",
-        lazy = false,
-        event = { "VimEnter" },
         opts = {
             suppressed_dirs = { "~/", "~/workspace", "~/Downloads", "/", "~/AppData", "~/Documents" },
             auto_session_last_session = false,
