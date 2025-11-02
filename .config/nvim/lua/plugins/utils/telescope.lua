@@ -15,19 +15,16 @@ return {
             defaults = {
                 initial_mode = 'insert',
                 file_ignore_patterns = {
-                    "^node_modules/",
-                    "^.git/",
-                    "^.cache/",
-                    "^.idea/",
-                    "^.vscode/",
+                    "^node_modules/*",
+                    "^.git/*",
+                    "^.cache/*",
+                    "^.idea/*",
                     "^.DS_Store",
                     "^.gitignore",
                     "^.gitmodules",
                     "^.gitattributes",
                     "^.gitkeep",
-                    "^.gitlab",
-                    "^.github",
-                    "^target/"
+                    "^target/*"
                 },
                 vimgrep_arguments = {
                     'rg',
@@ -37,7 +34,16 @@ return {
                     '--line-number',
                     '--column',
                     '--smart-case',
-                    '--hidden',
+                },
+            },
+            pickers = {
+                find_files = {
+                    hidden = true,
+                },
+                live_grep = {
+                    additional_args = function()
+                        return { "--hidden" }
+                    end,
                 },
             },
             extensions = {
