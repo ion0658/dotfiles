@@ -6,7 +6,9 @@ return {
         cmd = 'ToggleTerm',
         opts = {
             start_in_insert = true,
-            direction = 'float',
+            direction = 'vertical',
+            size = 120,
+            persist_size = true,
         },
         keys = {
             { "<leader>tt", "<CMD>ToggleTerm<CR>", desc = "ToggleTerm" }
