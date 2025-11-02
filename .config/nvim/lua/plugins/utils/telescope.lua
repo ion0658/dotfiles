@@ -21,20 +21,18 @@ return {
                     "^.gitlab",
                     "^.github",
                     "^target/"
-                }
+                },
             },
             extensions = {
-                project = {
-                    theme = 'dropdown',
-                },
                 aerial = {
                     show_nesting = {
                         ['_'] = false,
                         json = true,
                         yaml = true
                     },
-                    show_columns = 'both'
+                    show_columns = 'both',
                 },
+
             }
         },
         keys = {

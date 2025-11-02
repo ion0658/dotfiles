@@ -21,13 +21,13 @@ return {
         "jay-babu/mason-nvim-dap.nvim",
     },
     {
-        "toppair/peek.nvim",
-        cmd = { "PeekOpen", "PeekClose" },
-        build = "deno task --quiet build:fast",
-        config = function()
-            require("peek").setup()
-            vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
-            vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
-        end,
+        "OXY2DEV/markview.nvim",
+        lazy = true,
+        event = "VeryLazy",
+        dependencies = {
+            { "saghen/blink.cmp",            lazy = true },
+            { "nvim-tree/nvim-web-devicons", lazy = true },
+            { 'echasnovski/mini.icons',      lazy = true },
+        },
     },
 }
