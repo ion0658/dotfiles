@@ -4,6 +4,13 @@ return {
         version = "*",
         lazy = true,
         cmd = "Telescope",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope-project.nvim",
+            "nvim-telescope/telescope-ui-select.nvim",
+            "nvim-telescope/telescope-file-browser.nvim",
+            "stevearc/aerial.nvim",
+        },
         opts = {
             defaults = {
                 initial_mode = 'insert',
@@ -22,6 +29,16 @@ return {
                     "^.github",
                     "^target/"
                 },
+                vimgrep_arguments = {
+                    'rg',
+                    '--color=never',
+                    '--no-heading',
+                    '--with-filename',
+                    '--line-number',
+                    '--column',
+                    '--smart-case',
+                    '--hidden',
+                },
             },
             extensions = {
                 aerial = {
@@ -32,7 +49,10 @@ return {
                     },
                     show_columns = 'both',
                 },
-
+                file_browser = {
+                    hidden = true,
+                    respect_gitignore = false,
+                },
             }
         },
         keys = {
@@ -95,6 +115,6 @@ return {
     {
         "nvim-telescope/telescope-file-browser.nvim",
         version = "*",
-        lazy = true
+        lazy = true,
     },
 }
