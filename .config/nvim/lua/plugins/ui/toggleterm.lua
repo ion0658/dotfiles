@@ -9,6 +9,7 @@ return {
             direction = 'vertical',
             size = 120,
             persist_size = true,
+            close_on_exit = true,
         },
         keys = {
             { "<leader>tt", "<CMD>ToggleTerm<CR>", desc = "ToggleTerm" }
