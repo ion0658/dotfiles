@@ -2,4 +2,3 @@
 cmake = { version = "latest" }
 ninja = { version = "latest" }
 mold = { version = "latest", os = ["linux"] }
-"github:llvm/llvm-project" = { version = "latest" }
