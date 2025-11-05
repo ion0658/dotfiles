@@ -10,7 +10,7 @@ return {
             doge_doc_standard_c = 'doxygen_cpp_comment_slash',
         },
         keys    = {
-            { "<leader>gd", "<cmd>DogeGenerate<cr>", desc = "Generate Documentation" },
+            { "<leader>td", "<cmd>DogeGenerate<cr>", desc = "Generate Documentation" },
         },
         init    = function()
             vim.g.doge_mapping = 0

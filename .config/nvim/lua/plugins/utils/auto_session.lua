@@ -93,7 +93,7 @@ return {
                 previewer = false,
                 buftypes_to_ignore = {},
             },
-            bypas_save_filetypes = { "neo-tree" },
+            bypas_save_filetypes = { "neo-tree", "terminal", "incline" },
             pre_save_cmds = {
                 close_neo_tree,
                 disable_incline
@@ -117,7 +117,7 @@ return {
             }
         },
         config = function(_, opts)
-            vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
+            vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,localoptions'
             require('auto-session').setup(opts)
         end,
     },
