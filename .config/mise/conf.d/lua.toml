@@ -1,3 +1,4 @@
 [tools]
-lua = { version = "latest" }
-luajit = { version = "latest" }
+lua = { version = "latest", os = ["macos", "linux"] }
+luajit = { version = "latest", os = ["macos", "linux"] }
+
