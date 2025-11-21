@@ -36,6 +36,18 @@ return {
                         },
                         cmd = { "clangd", "--background-index", "--clang-tidy", "--experimental-modules-support" },
                     },
+                    rust_analyzer = {
+                        settings = {
+                            ["rust-analyzer"] = {
+                                cargo = {
+                                    targetDir = "target/rust-analyzer",
+                                }
+                            },
+                            checkOnSave = {
+                                command = "clippy"
+                            },
+                        }
+                    },
                     vue_ls = {
                         filetypes = { "vue" },
                         init_options = {
