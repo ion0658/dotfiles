@@ -24,7 +24,9 @@ $env.NUGET_PACKAGES = ($env.XDG_CACHE_HOME | path join 'nuget')
 $env.WEZTERM_CONFIG_DIR = ($env.XDG_CONFIG_HOME | path join 'wezterm')
 $env.WEZTERM_CONFIG_FILE = ($env.WEZTERM_CONFIG_DIR | path join 'wezterm.lua')
 
-path add '/opt/homebrew/bin'
+if (sys host | select name) == 'Darwin' {
+    path add '/opt/homebrew/bin'
+}
 
 $env.config.shell_integration = {
     osc2: false
