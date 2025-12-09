@@ -8,8 +8,6 @@ return {
             { "<leader>cl", "<cmd>LspInfo<cr>", desc = "Lsp Info" },
         },
         opts    = function()
-            local mason_packages = vim.fn.stdpath("data") .. "/mason/packages";
-            local volar_path = mason_packages .. "/vue-language-server/node_modules/@vue/language-server"
             local opts = {
                 servers = {
                     lua_ls = {
@@ -48,32 +46,6 @@ return {
                             },
                         }
                     },
-                    vue_ls = {
-                        filetypes = { "vue" },
-                        init_options = {
-                            vue = {
-                                hybridMode = false
-                            },
-                        }
-                    },
-                    ts_ls = {
-                        init_options = {
-                            plugins = {
-                                {
-                                    name = "@vue/typescript-plugin",
-                                    location = volar_path,
-                                    languages = { "vue" },
-                                },
-                            },
-                        },
-                        filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" }
-                    },
-                    csharp_language_server = {
-                        filetypes = { "cs" },
-                    },
-                    qmlls = {
-                        filetypes = { "qml" },
-                    }
                 }
             }
             return opts

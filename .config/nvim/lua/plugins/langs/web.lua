@@ -16,9 +16,7 @@ return {
         "mason-org/mason-lspconfig.nvim",
         opts = {
             ensure_installed = {
-                "ts_ls",
-                "vue_ls",
-                "tailwindcss",
+                "biome"
             }
         },
     },
