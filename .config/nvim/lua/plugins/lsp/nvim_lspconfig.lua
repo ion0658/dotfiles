@@ -32,7 +32,7 @@ return {
                         init_options = {
                             fallbackFlags = { "-std=c++20" },
                         },
-                        cmd = { "clangd", "--background-index", "--clang-tidy", "--experimental-modules-support" },
+                        cmd = { "clangd", "--background-index", "--clang-tidy" },
                     },
                     rust_analyzer = {
                         settings = {
