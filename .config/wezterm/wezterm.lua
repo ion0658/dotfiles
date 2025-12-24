@@ -106,7 +106,7 @@ local vs_devshell_ps1 = function()
     local cmd1 =
     "$vsInstallPath=& ${env:ProgramFiles(x86)}/'Microsoft Visual Studio'/Installer/vswhere.exe -prerelease -latest -property installationPath"
     local cmd2 = "Import-Module \"$vsInstallPath\\Common7\\Tools/Microsoft.VisualStudio.DevShell.dll\"";
-    local cmd3 = "Enter-VsDevShell -VsInstallPath $vsInstallPath -SkipAutomaticLocation"
+    local cmd3 = "Enter-VsDevShell -VsInstallPath $vsInstallPath -SkipAutomaticLocation -DevCmdArguments -arch=x64"
 
     return
         string.format("&{%s;%s;%s};nu", cmd1, cmd2, cmd3)
