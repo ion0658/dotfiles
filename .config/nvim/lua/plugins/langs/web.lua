@@ -16,6 +16,7 @@ return {
         "mason-org/mason-lspconfig.nvim",
         opts = {
             ensure_installed = {
+                "ts_ls",
                 "biome"
             }
         },
@@ -33,4 +34,3 @@ return {
         event = { "BufReadPre", "BufNewFile", "BufWritePre" },
     },
 }
-

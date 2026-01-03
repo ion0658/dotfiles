@@ -133,9 +133,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
         local client = vim.lsp.get_client_by_id(ev.data.client_id)
         if client.server_capabilities.inlayHintProvider then
             vim.lsp.inlay_hint.enable(true, { bufnr = ev.buf })
-            vim.notify("Attached with Inlay Hints", "info", { title = "LSP" })
+            vim.notify("Attached with Inlay Hints: " .. client.name, "info", { title = "LSP" })
         else
-            vim.notify("Attached", "info", { title = "LSP" })
+            vim.notify("Attached: " .. client.name, "info", { title = "LSP" })
         end
         -- Enable completion triggered by <c-x><c-o>
         vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
@@ -164,4 +164,39 @@ vim.api.nvim_create_autocmd("LspAttach", {
         map("i", "<c-k>", vim.lsp.buf.signature_help, lsp("Signature Help"))
     end,
 })
-
+vim.api.nvim_create_autocmd("LspAttach", {
+    group = vim.api.nvim_create_augroup("UserLspConfig", { clear = false }),
+    callback = function(ev)
+        local client = vim.lsp.get_client_by_id(ev.data.client_id)
+        -- フォーマット
+        if not client:supports_method('textDocument/willSaveWaitUntil')
+            and client:supports_method('textDocument/formatting') then
+            vim.notify("Setting up Format on Save: " .. client.name, "info", { title = "Formatter" })
+            if client.name == "biome" then
+                vim.api.nvim_create_autocmd('BufWritePre', {
+                    group = vim.api.nvim_create_augroup('UserLspConfig', { clear = false }),
+                    buffer = ev.buf,
+                    callback = function()
+                        vim.notify("Formatting with " .. client.name, "info", { title = "Formatter" })
+                        vim.lsp.buf.code_action({
+                            context = {
+                                only = { "source.fixAll.biome" },
+                                diagnostics = {},
+                            },
+                            apply = true,
+                        })
+                    end,
+                })
+            else
+                vim.api.nvim_create_autocmd('BufWritePre', {
+                    group = vim.api.nvim_create_augroup('UserLspConfig', { clear = false }),
+                    buffer = ev.buf,
+                    callback = function()
+                        vim.notify("Formatting with " .. client.name, "info", { title = "Formatter" })
+                        vim.lsp.buf.format({ bufnr = ev.buf, id = client.id, timeout_ms = 3000 })
+                    end,
+                })
+            end
+        end
+    end,
+})
