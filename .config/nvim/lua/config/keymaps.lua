@@ -126,42 +126,34 @@ map("n", "<leader>-", "<C-W>s", { desc = "Split Window Below", remap = true })
 map("n", "<leader>|", "<C-W>v", { desc = "Split Window Right", remap = true })
 map("n", "<c-w>d", "<C-W>c", { desc = "Delete Window", remap = true })
 
-
+vim.opt.completeopt = { "menuone", "noselect", "popup" }
 vim.api.nvim_create_autocmd("LspAttach", {
-    group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+    group = vim.api.nvim_create_augroup("UserLspConfig", { clear = false }),
     callback = function(ev)
         local client = vim.lsp.get_client_by_id(ev.data.client_id)
+        -- neovim native completion autotrigger (commented out because it not work with copilot)
+        -- if client:supports_method('textDocument/completion') then
+        --     -- 文字を入力する度に補完を表示（遅くなる可能性あり）
+        --     local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
+        --     client.server_capabilities.completionProvider.triggerCharacters = chars
+        --     -- 補完を有効化
+        --     vim.lsp.completion.enable(true, client.id, ev.buf, {
+        --         autotrigger = true,
+        --         convert = function(item)
+        --             return { abbr = item.label:gsub('%b()', '') }
+        --         end,
+        --     })
+        -- end
+        -- if client:supports_method('textDocument/inlineCompletion') then
+        --     vim.notify("Enabling Inline Completion: " .. client.name, "info", { title = "LSP" })
+        --     vim.lsp.inline_completion.enable(true, { bufnr = ev.buf, client_id = client.id })
+        -- end
         if client.server_capabilities.inlayHintProvider then
             vim.lsp.inlay_hint.enable(true, { bufnr = ev.buf })
             vim.notify("Attached with Inlay Hints: " .. client.name, "info", { title = "LSP" })
         else
             vim.notify("Attached: " .. client.name, "info", { title = "LSP" })
         end
-        -- Enable completion triggered by <c-x><c-o>
-        vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
-        local function lsp(desc)
-            if desc then
-                desc = "LSP: " .. desc
-            end
-            return { desc = desc, buffer = ev.buf }
-        end
-
-        -- { "gd",         "<cmd>lua vim.lsp.buf.definition()<cr>", desc = "Goto Definition", has = "definition" },
-        map("n", "gd", vim.lsp.buf.definition, lsp("Goto Definition"))
-        -- { "gr",         vim.lsp.buf.references,      desc = "References",            nowait = true },
-        map("n", "gr", vim.lsp.buf.references, lsp("References"))
-        -- { "gI",         vim.lsp.buf.implementation,  desc = "Goto Implementation" },
-        map("n", "gI", vim.lsp.buf.implementation, lsp("Goto Implementation"))
-        -- { "gy",         vim.lsp.buf.type_definition, desc = "Goto T[y]pe Definition" },
-        map("n", "gy", vim.lsp.buf.type_definition, lsp("Goto Type Definition"))
-        -- { "gD",         vim.lsp.buf.declaration,     desc = "Goto Declaration" },
-        map("n", "gD", vim.lsp.buf.declaration, lsp("Goto Declaration"))
-        -- { "K",          vim.lsp.buf.hover,           desc = "Hover" },
-        map("n", "K", vim.lsp.buf.hover, lsp("Hover"))
-        -- { "gK",         vim.lsp.buf.signature_help,  desc = "Signature Help",        has = "signatureHelp" },
-        map("n", "gK", vim.lsp.buf.signature_help, lsp("Signature Help"))
-        -- { "<c-k>",      vim.lsp.buf.signature_help,  mode = "i",                     desc = "Signature Help", has = "signatureHelp" },
-        map("i", "<c-k>", vim.lsp.buf.signature_help, lsp("Signature Help"))
     end,
 })
 vim.api.nvim_create_autocmd("LspAttach", {
