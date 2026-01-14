@@ -3,7 +3,9 @@ GHQ_ROOT = "{{ [xdg_data_home] | concat(with='ghq') | join_path }}"
 
 [tools]
 git-lfs = { version = "latest" }
+jujutsu = { version = "latest" }
 lazygit = { version = "latest" }
+jujutsu-ui = { version = "latest" }
 ghq = { version = "latest" }
 "npm:cz-git" = { version = "latest" }
 "npm:czg" = { version = "latest" }
