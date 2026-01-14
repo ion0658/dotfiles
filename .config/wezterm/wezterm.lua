@@ -107,9 +107,10 @@ local vs_devshell_ps1 = function()
     "$vsInstallPath=& ${env:ProgramFiles(x86)}/'Microsoft Visual Studio'/Installer/vswhere.exe -prerelease -latest -property installationPath"
     local cmd2 = "Import-Module \"$vsInstallPath\\Common7\\Tools/Microsoft.VisualStudio.DevShell.dll\"";
     local cmd3 = "Enter-VsDevShell -VsInstallPath $vsInstallPath -SkipAutomaticLocation -DevCmdArguments -arch=x64"
+    local cmd4 = "chcp 65001"
 
     return
-        string.format("&{%s;%s;%s};nu", cmd1, cmd2, cmd3)
+        string.format("&{%s;%s;%s;%s};nu", cmd1, cmd2, cmd3, cmd4)
 end
 
 
@@ -155,3 +156,4 @@ end
 
 config.launch_menu = launch_menu
 return config
+
