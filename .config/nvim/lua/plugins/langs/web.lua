@@ -17,12 +17,18 @@ return {
         opts = {
             ensure_installed = {
                 "ts_ls",
-                "biome"
+                "oxfmt",
+                "oxlint",
             }
         },
     },
     {
         "jay-babu/mason-null-ls.nvim",
+        opts = {
+            ensure_installed = {
+                "oxfmt",
+            }
+        },
     },
     {
         "jay-babu/mason-nvim-dap.nvim",
