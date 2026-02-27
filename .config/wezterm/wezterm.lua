@@ -147,13 +147,13 @@ if wezterm.target_triple:find("msvc") then
         },
     }
     config.default_prog = {
-        "pwsh.exe",
-        "-NoLogo",
-        "-Command",
-        vs_devshell_ps1(),
+        "nu"
+        -- "pwsh.exe",
+        -- "-NoLogo",
+        -- "-Command",
+        -- vs_devshell_ps1(),
     }
 end
 
 config.launch_menu = launch_menu
 return config
-
