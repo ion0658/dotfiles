@@ -28,4 +28,3 @@ fastfetch = { version = "latest" }
 fzf = { version = "latest" }
 jq = { version = "latest" }
 yazi = { version = "latest" }
-

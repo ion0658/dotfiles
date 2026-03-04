@@ -1,4 +1,3 @@
 [tools]
 lua = { version = "latest", os = ["macos", "linux"] }
 luajit = { version = "latest", os = ["macos", "linux"] }
-

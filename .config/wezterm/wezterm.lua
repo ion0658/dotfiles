@@ -110,7 +110,7 @@ local vs_devshell_ps1 = function()
     local cmd4 = "chcp 65001"
 
     return
-        string.format("&{%s;%s;%s;%s};nu", cmd1, cmd2, cmd3, cmd4)
+        string.format("&{%s;%s;%s;%s};nu -l", cmd1, cmd2, cmd3, cmd4)
 end
 
 
@@ -143,7 +143,7 @@ if wezterm.target_triple:find("msvc") then
         },
         {
             label = "NuShell",
-            args = { "nu.exe" },
+            args = { "nu.exe", "-l" },
         },
     }
     config.default_prog = {
