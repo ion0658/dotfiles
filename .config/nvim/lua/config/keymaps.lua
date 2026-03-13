@@ -131,23 +131,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("UserLspConfig", { clear = false }),
     callback = function(ev)
         local client = vim.lsp.get_client_by_id(ev.data.client_id)
-        -- neovim native completion autotrigger (commented out because it not work with copilot)
-        -- if client:supports_method('textDocument/completion') then
-        --     -- 文字を入力する度に補完を表示（遅くなる可能性あり）
-        --     local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
-        --     client.server_capabilities.completionProvider.triggerCharacters = chars
-        --     -- 補完を有効化
-        --     vim.lsp.completion.enable(true, client.id, ev.buf, {
-        --         autotrigger = true,
-        --         convert = function(item)
-        --             return { abbr = item.label:gsub('%b()', '') }
-        --         end,
-        --     })
-        -- end
-        -- if client:supports_method('textDocument/inlineCompletion') then
-        --     vim.notify("Enabling Inline Completion: " .. client.name, "info", { title = "LSP" })
-        --     vim.lsp.inline_completion.enable(true, { bufnr = ev.buf, client_id = client.id })
-        -- end
         if client.server_capabilities.inlayHintProvider then
             vim.lsp.inlay_hint.enable(true, { bufnr = ev.buf })
             vim.notify("Attached with Inlay Hints: " .. client.name, "info", { title = "LSP" })
@@ -164,31 +147,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
         if not client:supports_method('textDocument/willSaveWaitUntil')
             and client:supports_method('textDocument/formatting') then
             vim.notify("Setting up Format on Save: " .. client.name, "info", { title = "Formatter" })
-            if client.name == "biome" then
-                vim.api.nvim_create_autocmd('BufWritePre', {
-                    group = vim.api.nvim_create_augroup('UserLspConfig', { clear = false }),
-                    buffer = ev.buf,
-                    callback = function()
-                        vim.notify("Formatting with " .. client.name, "info", { title = "Formatter" })
-                        vim.lsp.buf.code_action({
-                            context = {
-                                only = { "source.fixAll.biome" },
-                                diagnostics = {},
-                            },
-                            apply = true,
-                        })
-                    end,
-                })
-            else
-                vim.api.nvim_create_autocmd('BufWritePre', {
-                    group = vim.api.nvim_create_augroup('UserLspConfig', { clear = false }),
-                    buffer = ev.buf,
-                    callback = function()
-                        vim.notify("Formatting with " .. client.name, "info", { title = "Formatter" })
-                        vim.lsp.buf.format({ bufnr = ev.buf, id = client.id, timeout_ms = 3000 })
-                    end,
-                })
-            end
+            vim.api.nvim_create_autocmd('BufWritePre', {
+                group = vim.api.nvim_create_augroup('UserLspConfig', { clear = false }),
+                buffer = ev.buf,
+                callback = function()
+                    vim.notify("Formatting with " .. client.name, "info", { title = "Formatter" })
+                    vim.lsp.buf.format({ bufnr = ev.buf, id = client.id, timeout_ms = 3000 })
+                end,
+            })
         end
     end,
 })
