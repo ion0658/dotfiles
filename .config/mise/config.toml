@@ -3,3 +3,4 @@ MISE_JOBS = "{{ num_cpus() }}"
 
 [settings]
 disable_backends = []
+windows_shim_mode = "symlink"
