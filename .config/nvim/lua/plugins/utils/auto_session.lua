@@ -1,33 +1,33 @@
-local function close_neo_tree()
-    local st, manager = pcall(require, "neo-tree.sources.manager")
-    if not st then
-        return
-    end
-    local state = manager.get_state "filesystem"
-    if require("neo-tree.ui.renderer").window_exists(state) then
-        vim.api.nvim_command "Neotree close"
-    end
-    vim.notify('closing neotree')
-end
+-- local function close_neo_tree()
+--     local st, manager = pcall(require, "neo-tree.sources.manager")
+--     if not st then
+--         return
+--     end
+--     local state = manager.get_state "filesystem"
+--     if require("neo-tree.ui.renderer").window_exists(state) then
+--         vim.api.nvim_command "Neotree close"
+--     end
+--     vim.notify('closing neotree')
+-- end
 
-local function open_neo_tree()
-    vim.notify('opening neotree')
-    require 'neo-tree.sources.manager'.show('filesystem')
-end
+-- local function open_neo_tree()
+-- vim.notify('opening neotree')
+-- require 'neo-tree.sources.manager'.show('filesystem')
+-- end
 
 local function on_change_cwd()
-    local st, mgr = pcall(require, "neo-tree.sources.manager")
-    if not st then
-        vim.notify("NeoTree is not installed", vim.log.levels.ERROR)
-        return
-    end
-    local state = mgr.get_state "filesystem"
-    if not require("neo-tree.ui.renderer").window_exists(state) then
-        vim.notify("NeoTree is not open", vim.log.levels.ERROR)
-        return
-    end
+    -- local st, mgr = pcall(require, "neo-tree.sources.manager")
+    -- if not st then
+    --     vim.notify("NeoTree is not installed", vim.log.levels.ERROR)
+    --     return
+    -- end
+    -- local state = mgr.get_state "filesystem"
+    -- if not require("neo-tree.ui.renderer").window_exists(state) then
+    --     vim.notify("NeoTree is not open", vim.log.levels.ERROR)
+    --     return
+    -- end
     vim.notify("change cwd to " .. vim.uv.cwd())
-    require("neo-tree.command").execute { dir = vim.uv.cwd() }
+    -- require("neo-tree.command").execute { dir = vim.uv.cwd() }
     require("lualine").refresh()
 end
 
@@ -95,17 +95,17 @@ return {
             },
             bypas_save_filetypes = { "neo-tree", "terminal", "incline" },
             pre_save_cmds = {
-                close_neo_tree,
+                -- close_neo_tree,
                 disable_incline
             },
             post_restore_cmds = {
-                open_neo_tree,
+                -- open_neo_tree,
                 on_change_cwd,
                 delete_shadata
             },
             cwd_change_handling = {
                 pre_cwd_changed_hook = function()
-                    close_neo_tree()
+                    -- close_neo_tree()
                     disable_incline()
                     clear_hidden_buffers()
                 end,
@@ -122,4 +122,3 @@ return {
         end,
     },
 }
-
