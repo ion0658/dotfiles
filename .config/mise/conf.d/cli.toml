@@ -26,5 +26,6 @@ cargo-binstall = { version = "latest" }
 "github:go-swagger/go-swagger" = { version = "latest" }
 fastfetch = { version = "latest" }
 fzf = { version = "latest" }
+gping = { version = "latest" }
 jq = { version = "latest" }
 yazi = { version = "latest" }
