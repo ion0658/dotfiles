@@ -6,7 +6,7 @@ return {
         priority = 8000, -- Very high priority is required
         config = function()
             vim.g.sonokai_enable_italic = 1
-            vim.g.sonokai_style = "atlantis"
+            vim.g.sonokai_style = "default"
             vim.g.sonokai_better_performance = 1
             vim.g.sonokai_transparent_background = 2
             vim.cmd.colorscheme("sonokai")
@@ -29,4 +29,3 @@ return {
     },
 
 }
-

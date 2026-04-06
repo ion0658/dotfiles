@@ -7,13 +7,13 @@ if wezterm.config_builder then
 end
 
 -- カラースキームの設定
-config.color_scheme = "Catppuccin Mocha"
-config.window_background_opacity = 0.9
+config.color_scheme = "Molokai"
+config.window_background_opacity = 0.5
 config.window_padding = {
-    left = 20,
-    right = 20,
-    top = 20,
-    bottom = 20,
+    left = 5,
+    right = 0,
+    top = 0,
+    bottom = 0,
 }
 -- ui settings
 config.font = wezterm.font_with_fallback({
@@ -22,8 +22,9 @@ config.font = wezterm.font_with_fallback({
 config.font_size = 16.0
 config.use_ime = true
 config.enable_scroll_bar = true
-config.tab_bar_at_bottom = true
-config.use_fancy_tab_bar = false
+config.tab_bar_at_bottom = false
+config.use_fancy_tab_bar = true
+config.hide_tab_bar_if_only_one_tab = true
 config.max_fps = 120
 config.animation_fps = 120
 
@@ -103,14 +104,15 @@ config.keys = {
 }
 
 local vs_devshell_ps1 = function()
-    local cmd1 =
+    local cmd_get_vs_path =
     "$vsInstallPath=& ${env:ProgramFiles(x86)}/'Microsoft Visual Studio'/Installer/vswhere.exe -prerelease -latest -property installationPath"
-    local cmd2 = "Import-Module \"$vsInstallPath\\Common7\\Tools/Microsoft.VisualStudio.DevShell.dll\"";
-    local cmd3 = "Enter-VsDevShell -VsInstallPath $vsInstallPath -SkipAutomaticLocation -DevCmdArguments -arch=x64"
-    local cmd4 = "chcp 65001"
+    local cmd_import_dev_mod = "Import-Module \"$vsInstallPath\\Common7\\Tools/Microsoft.VisualStudio.DevShell.dll\""
+    local cmd_activate_dev_shell =
+    "Enter-VsDevShell -VsInstallPath $vsInstallPath -SkipAutomaticLocation -DevCmdArguments -arch=x64"
+    local cmd_use_utf8 = "chcp 65001"
 
     return
-        string.format("&{%s;%s;%s;%s};nu -l", cmd4, cmd1, cmd2, cmd3)
+        string.format("&{%s;%s;%s;%s};nu -l", cmd_use_utf8, cmd_get_vs_path, cmd_import_dev_mod, cmd_activate_dev_shell)
 end
 
 
