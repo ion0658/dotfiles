@@ -8,7 +8,7 @@ end
 
 -- カラースキームの設定
 config.color_scheme = "Molokai"
-config.window_background_opacity = 0.5
+config.window_background_opacity = 0.9
 config.window_padding = {
     left = 5,
     right = 0,
