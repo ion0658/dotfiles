@@ -9,3 +9,4 @@ node = { version = "latest" }
 pnpm = { version = "latest" }
 bun = { version = "latest" }
 deno = { version = "latest" }
+aube = { version = "latest" }
