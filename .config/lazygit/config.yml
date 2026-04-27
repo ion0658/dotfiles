@@ -12,3 +12,9 @@ customCommands:
     description: "Commit changes using git editor"
     output: terminal
 
+git:
+  merging:
+    manualCommit: false
+    args: ""
+os:
+  editPreset: "nvim"
