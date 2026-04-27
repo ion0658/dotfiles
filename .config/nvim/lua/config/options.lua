@@ -17,6 +17,9 @@ vim.opt.wrap = false
 vim.opt.termguicolors = true
 vim.opt.winblend = 10
 vim.opt.pumblend = 10
+-- netrw (デフォルトのファイラー) を無効化
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 -- disable perl provider
 vim.g.loaded_perl_provider = 0
