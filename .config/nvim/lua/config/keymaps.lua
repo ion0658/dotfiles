@@ -137,13 +137,31 @@ map("n", "<leader>-", "<C-W>s", keymap_opts("Split Window Below"))
 map("n", "<leader>|", "<C-W>v", keymap_opts("Split Window Right"))
 map("n", "<c-w>d", "<C-W>c", keymap_opts("Delete Window"))
 
+map("i", "<Tab>", function()
+        if vim.fn.pumvisible() == 1 then
+            return '<C-y>' -- メニューが出ていれば確定
+        else
+            return '<Tab>' -- 出ていなければ通常のTab
+        end
+    end,
+    keymap_opts("accept complete"))
+
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("UserLspConfig", { clear = false }),
     callback = function(ev)
         local client = vim.lsp.get_client_by_id(ev.data.client_id)
+        vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+        if client:supports_method('textDocument/completion') then
+            -- Optional: trigger autocompletion on EVERY keypress. May be slow!
+            local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
+            client.server_capabilities.completionProvider.triggerCharacters = chars
+            vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+        end
+
         if client.server_capabilities.inlayHintProvider then
             vim.lsp.inlay_hint.enable(true, { bufnr = ev.buf })
         end
+
         -- フォーマット
         if not client:supports_method('textDocument/willSaveWaitUntil')
             and client:supports_method('textDocument/formatting') then
@@ -155,5 +173,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
                 end,
             })
         end
-    end,
+    end
 })

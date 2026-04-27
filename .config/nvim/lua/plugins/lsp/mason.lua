@@ -43,7 +43,7 @@ return {
             { "gD",    "<cmd>lua vim.lsp.buf.declaration()<cr>",     desc = "Goto Declaration",       nowait = true },
             { "K",     "<cmd>lua vim.lsp.buf.hover()<cr>",           desc = "Hover",                  nowait = true },
             { "gK",    "<cmd>lua vim.lsp.buf.signature_help()<cr>",  desc = "Signature Help",         nowait = true },
-            { "<c-k>", "<cmd>lua vim.lsp.buf.signature_help()<cr>",  desc = "Signature Help",         nowait = true,  mode = "i" },
+            { "<c-k>", "<cmd>lua vim.lsp.buf.signature_help()<cr>",  desc = "Signature Help",         nowait = true, mode = "i" },
         },
         config       = true
     },

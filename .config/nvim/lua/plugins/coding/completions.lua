@@ -9,6 +9,7 @@ return {
         -- use a release tag to download pre-built binaries
         version = "*",
         lazy = true,
+        enabled = false,
         event = "InsertEnter",
 
         -- optional: provides snippets for the snippet source
