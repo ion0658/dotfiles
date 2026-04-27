@@ -1,8 +1,8 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        version      = "*",
-        lazy         = true,
+        branch       = "main",
+        version      = false,
         dependencies = { "nushell/tree-sitter-nu" },
         build        = ":TSUpdate",
         event        = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
@@ -64,4 +64,3 @@ return {
         enabled = false,
     },
 }
-
