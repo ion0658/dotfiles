@@ -20,21 +20,14 @@ vim.opt.pumblend = 10
 -- netrw (デフォルトのファイラー) を無効化
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+vim.opt.completeopt = { "menuone", "noselect", "noinsert" }
 
 -- disable perl provider
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
 
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-    border = "rounded",
-})
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.hover, {
-    border = "rounded",
-})
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-    virtual_text = false,
-})
 vim.diagnostic.config {
+    virtual_text = false,
     float = { border = "rounded" },
 }
 
