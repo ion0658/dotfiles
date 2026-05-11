@@ -1,2 +1,2 @@
 [tools]
-lua = { version = "latest", os = ["macos", "linux"] }
+"vfox:mise-plugins/vfox-lua" = { version = "latest", os = ["macos", "linux"] }

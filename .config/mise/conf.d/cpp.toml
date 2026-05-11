@@ -1,4 +1,4 @@
 [tools]
-cmake = { version = "latest" }
+"aqua:Kitware/CMake" = { version = "latest" }
 ninja = { version = "latest" }
 mold = { version = "latest", os = ["linux"] }

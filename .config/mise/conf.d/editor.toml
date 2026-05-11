@@ -3,9 +3,10 @@ XCODES_DIRECTORY = "/Volumes/Applications/Xcode"
 
 [tools]
 # neovim
-neovim = { version = "latest" }
+"aqua:neovim" = { version = "latest" }
 "pipx:pynvim" = { version = "latest" }
 helix = { version = "latest" }
 
 # xcode
 xcodes = { version = "latest", os = ["macos"] }
+
