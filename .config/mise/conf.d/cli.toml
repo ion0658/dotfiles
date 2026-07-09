@@ -24,6 +24,7 @@ cargo-binstall = { version = "latest" }
 "cargo:websocat" = { version = "latest" }
 "cargo:zoxide" = { version = "latest" }
 "github:go-swagger/go-swagger" = { version = "latest" }
+"github:rivolink/leaf" = { version = "latest" }
 fastfetch = { version = "latest" }
 fzf = { version = "latest" }
 gping = { version = "latest" }
