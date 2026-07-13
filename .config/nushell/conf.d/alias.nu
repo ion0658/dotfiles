@@ -1,6 +1,5 @@
 alias vim = nvim
 alias cat = bat
-alias ls = eza
 alias find = fd
 alias grep = rg
 
