@@ -6,7 +6,7 @@ package_manager = "pnpm"
 
 [tools]
 aube = { version = "latest" }
-node = { version = "latest" }
+node = { version = "lts" }
 pnpm = { version = "latest" }
 bun = { version = "latest" }
 deno = { version = "latest" }
