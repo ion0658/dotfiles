@@ -120,9 +120,10 @@ end
 if wezterm.target_triple:find("msvc") then
     config.wsl_domains = {
         {
-            name = "WSL:ArchLinux",
-            distribution = "ArchLinux",
+            name = "WSL",
+            distribution = "Ubuntu-26.04",
             default_cwd = "~",
+            default_prog = { "bash", "-i", "-c", "nu", "-l" },
         },
     }
     launch_menu = {
