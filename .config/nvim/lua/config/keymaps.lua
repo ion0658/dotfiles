@@ -141,17 +141,30 @@ vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("UserLspConfig", { clear = false }),
     callback = function(ev)
         local client = vim.lsp.get_client_by_id(ev.data.client_id)
-        if client.server_capabilities.inlayHintProvider then
+        if not client then return end -- 1. nilガードの追加
+
+        if client:supports_method('textDocument/inlayHint') then
             vim.lsp.inlay_hint.enable(true, { bufnr = ev.buf })
         end
+
         -- フォーマット
-        if not client:supports_method('textDocument/willSaveWaitUntil')
-            and client:supports_method('textDocument/formatting') then
+        if client:supports_method('textDocument/formatting') then
+            local group_name = string.format("LspFormat_buf%d_client%d", ev.buf, client.id)
+            local format_aug = vim.api.nvim_create_augroup(group_name, { clear = true })
+
             vim.api.nvim_create_autocmd('BufWritePre', {
-                group = vim.api.nvim_create_augroup('UserLspConfig', { clear = false }),
+                group = format_aug,
                 buffer = ev.buf,
                 callback = function()
-                    vim.lsp.buf.format({ bufnr = ev.buf, id = client.id, timeout_ms = 3000 })
+                    vim.lsp.buf.format({ bufnr = ev.buf, id = client.id, timeout_ms = 3000, async = false })
+                end,
+            })
+            vim.api.nvim_create_autocmd('BufDelete', {
+                group = format_aug,
+                buffer = ev.buf,
+                once = true,
+                callback = function()
+                    pcall(vim.api.nvim_del_augroup_by_name, group_name)
                 end,
             })
         end
