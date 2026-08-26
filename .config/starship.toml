@@ -6,7 +6,7 @@ add_newline = true
 command_timeout = 3600000
 scan_timeout = 500
 
-format = "$username$shell$directory$all$time$cmd_duration$line_break$character"
+format = "$shell$directory$all$time$cmd_duration$line_break$character"
 
 [character]
 error_symbol = "[❯](bold red)"
@@ -39,11 +39,10 @@ format = "[$time]($style) "
 style_user = "white bold"
 style_root = "black bold"
 format = "[$user🌱]($style) "
-disabled = false
+disabled = true
 show_always = true
 
 [shell]
 disabled = false
-format = '[with $indicator]($style) '
+format = '[$indicator]($style) '
 style = "white bold"
-

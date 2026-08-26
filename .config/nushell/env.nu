@@ -32,20 +32,3 @@ if ($host | str contains 'Debian') or ($host | str contains 'Ubuntu') {
     path add '/snap/bin'
 }
 
-$env.config.shell_integration = {
-    osc2: false
-    osc7: false
-    osc8: false
-    osc9_9: false
-    osc133: false
-    osc633: false
-    reset_application_mode: false
-}
-$env.config.buffer_editor = "nvim"
-$env.config.history = {
-    file_format: sqlite
-    max_size: 1_000_000
-    sync_on_enter: true
-    isolation: true
-}
-
