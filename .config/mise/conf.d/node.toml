@@ -1,5 +1,5 @@
 [env]
-NPM_CONFIG_USERCONFIG = "{{ [xdg_config_home] | concat(with='npm') | concat(with='npmrc') | join_path }}"
+NPM_CONFIG_USERCONFIG = "{{ [xdg_config_home, 'npm', 'npmrc'] | join_path }}"
 
 [settings.npm]
 package_manager = "pnpm"
