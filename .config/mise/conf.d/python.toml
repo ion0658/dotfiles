@@ -4,6 +4,9 @@ uv_venv_auto = true
 [settings.pipx]
 uvx = true
 
+[env]
+UV_PYTHON = { value = "{{ tools.python.path }}", tools = true }
+
 [tools]
 # python tools
 python = { version = "3" }

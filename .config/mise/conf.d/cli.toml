@@ -8,7 +8,7 @@ _ZO_DATA_DIR = "{{ [xdg_cache_home, 'zoxide'] | join_path }}"
 
 [tools]
 aws-cli = { version = "latest" }
-carapace = { version = "latest" }
+"aqua:carapace-sh/carapace-bin" = { version = "latest" }
 cargo-binstall = { version = "latest" }
 "cargo:cargo-update" = { version = "latest" }
 "cargo:cargo-machete" = { version = "latest" }
